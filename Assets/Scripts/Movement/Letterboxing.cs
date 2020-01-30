@@ -10,6 +10,7 @@ public class Letterboxing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Canvas>().enabled = true;
         boxes = GetComponentsInChildren<Image>();
         controller = GameObject.Find("Runner").GetComponent<Controller>();
     }

@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour
     private GameObject   boxCollider;
     private NoiseMaker   sfx;
     private Vector3      oldPos;
-    private Camera       camera;
+    private CameraFollow camera;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +40,10 @@ public class Controller : MonoBehaviour
         walls = GameObject.FindGameObjectsWithTag("Wall");
         wallProperties = FindObjectsOfType<WallSetup>();
         sfx = GetComponent<NoiseMaker>();
-        camera = GetComponentInChildren<Camera>();
         accel = 10.0f;
         resetGravity = gravity;
         gripSet = false;
+        camera = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -52,123 +52,112 @@ public class Controller : MonoBehaviour
         //--------------------------------------------------
         // - Movement -
         //-------
-        if (currentFall < 0.0f && gravity < resetGravity * 1.01f)
-            gravity *= 1.01f;
-        else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
+        if (camera.begin)
         {
-            gravity *= 0.95f;
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            if (camera.orthographicSize < 20.0f)
-                camera.orthographicSize += accel * Time.deltaTime;
-            else if (camera.orthographicSize > 20.0f)
-                camera.orthographicSize = 20.0f;
-        }
-        else
-        {
-            if (camera.orthographicSize > 10.0f)
-                camera.orthographicSize -= accel * Time.deltaTime;
-            else if (camera.orthographicSize < 10.0f)
-                camera.orthographicSize = 10.0f;
-        }
-
-        currentFall -= gravity * Time.deltaTime;
-        landing = false;
-        hitting = 0;
-
-        if (hitting > -1)
-        { // Move left
-            if (Input.GetKey(KeyCode.A))
-                currentSpeed -= accel * Time.deltaTime;
-            else currentSpeed += accel * Time.deltaTime;
-        }
-
-        if (hitting < 1)
-        { // Move right
-            if (Input.GetKey(KeyCode.D))
-                currentSpeed += accel * Time.deltaTime;
-            else currentSpeed -= accel * Time.deltaTime;
-        }
-
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        { // Deceleration
-            if (currentSpeed > 0)
-                currentSpeed -= accel * Time.deltaTime;
-            else if (currentSpeed < 0)
-                currentSpeed += accel * Time.deltaTime;
-            if (currentSpeed < 0.2f && currentSpeed > -0.2f) // Correcting floating point inaccuracy near 0
-                currentSpeed = 0;
-        }
-
-        if (Mathf.Abs(currentSpeed) > 2.0f)
-            GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
-        else
-            GetComponentInChildren<StepTimer>().StopMoving();
-
-        if (currentSpeed > topSpeed)
-            currentSpeed = topSpeed;
-        if (currentSpeed < -topSpeed)
-            currentSpeed = -topSpeed;
-        if (currentFall < terminalV)
-            currentFall = terminalV;
-
-        oldPos = transform.position;
-        transform.Translate(currentSpeed * Time.deltaTime, currentFall * Time.deltaTime, 0.0f);
-
-        gripSet = false;
-        for (int i = 0; i < walls.Length; i++) // Basic collision detection, behind this point, everything thinks it's free to move anywhere
-        {
-            if (landing && hitting != 0)
-                break;
-
-            if (!gripSet)
+            if (currentFall < 0.0f && gravity < resetGravity * 1.01f)
+                gravity *= 1.01f;
+            else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
             {
-                accel = 10.0f;
-                cling = 0.05f;
+                gravity *= 0.95f;
             }
-            CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2, walls[i].transform.lossyScale / 2, i, oldPos);
-        }
 
-        if (hitting != 0)
-        { // Wall jump mechanics
-            currentFall += cling;
-            if (Input.GetKey(KeyCode.W))
+            currentFall -= gravity * Time.deltaTime;
+            landing = false;
+            hitting = 0;
+
+            if (hitting > -1)
+            { // Move left
+                if (Input.GetKey(KeyCode.A))
+                    currentSpeed -= accel * Time.deltaTime;
+                else currentSpeed += accel * Time.deltaTime;
+            }
+
+            if (hitting < 1)
+            { // Move right
+                if (Input.GetKey(KeyCode.D))
+                    currentSpeed += accel * Time.deltaTime;
+                else currentSpeed -= accel * Time.deltaTime;
+            }
+
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            { // Deceleration
+                if (currentSpeed > 0)
+                    currentSpeed -= accel * Time.deltaTime;
+                else if (currentSpeed < 0)
+                    currentSpeed += accel * Time.deltaTime;
+                if (currentSpeed < 0.2f && currentSpeed > -0.2f) // Correcting floating point inaccuracy near 0
+                    currentSpeed = 0;
+            }
+
+            if (currentSpeed > topSpeed)
+                currentSpeed = topSpeed;
+            if (currentSpeed < -topSpeed)
+                currentSpeed = -topSpeed;
+            if (currentFall < terminalV)
+                currentFall = terminalV;
+
+            oldPos = transform.position;
+            transform.Translate(currentSpeed * Time.deltaTime, currentFall * Time.deltaTime, 0.0f);
+
+            gripSet = false;
+            for (int i = 0; i < walls.Length; i++) // Basic collision detection, behind this point, everything thinks it's free to move anywhere
             {
-                currentFall += launchPwr / 2;
-                if (hitting == -1)
-                    currentSpeed = topSpeed;
-                else
-                    currentSpeed = -topSpeed;
+                if (landing && hitting != 0)
+                    break;
+
+                if (!gripSet)
+                {
+                    accel = 10.0f;
+                    cling = 0.05f;
+                }
+                CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2, walls[i].transform.lossyScale / 2, i, oldPos);
+            }
+
+            if (hitting != 0)
+            { // Wall jump mechanics
+                currentFall += cling;
+                if (Input.GetKey(KeyCode.W))
+                {
+                    currentFall += launchPwr / 2;
+                    if (hitting == -1)
+                        currentSpeed = topSpeed;
+                    else
+                        currentSpeed = -topSpeed;
+
+                    if (sfx.enabled)
+                    {
+                        sfx.MakeNoise(10.0f);
+                        sfx.CallSound(1, hitting);
+                    }
+                }
+            }
+
+            if (Input.GetKey(KeyCode.W) && landing)
+            {
+                if (Mathf.Abs(currentSpeed) >= topSpeed)
+                    launchPwr *= 1.25f;
+
+                currentFall += launchPwr;
+
+                if (Mathf.Abs(currentSpeed) >= topSpeed)
+                    launchPwr /= 1.25f;
 
                 if (sfx.enabled)
                 {
                     sfx.MakeNoise(10.0f);
-                    sfx.CallSound(1, hitting);
+                    sfx.CallSound(0);
                 }
             }
-        }
 
-        if (Input.GetKey(KeyCode.W) && landing)
-        {
-            if (Mathf.Abs(currentSpeed) >= topSpeed)
-                launchPwr *= 1.25f;
-
-            currentFall += launchPwr;
-
-            if (Mathf.Abs(currentSpeed) >= topSpeed)
-                launchPwr /= 1.25f;
-
-            if (sfx.enabled)
+            if (landing)
             {
-                sfx.MakeNoise(10.0f);
-                sfx.CallSound(0);
+                gravity = resetGravity;
+                if (Mathf.Abs(currentSpeed) > 2.0f)
+                    GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
+                else
+                    GetComponentInChildren<StepTimer>().StopMoving();
             }
         }
-
-        if (landing)
-            gravity = resetGravity;
     }
 
     private void CollisionCheck(Vector2 playerPos, Vector2 obstaclePos, Vector2 playerScale, Vector2 obstacleScale, int i, Vector3 oldPos)

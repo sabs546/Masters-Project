@@ -9,6 +9,7 @@ TagManager:
   - Guard
   - Button
   - NoiseMaker
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: Floors and walls
     uniqueID: 846517333
+    locked: 0
+  - name: GUI
+    uniqueID: 2937828327
     locked: 0

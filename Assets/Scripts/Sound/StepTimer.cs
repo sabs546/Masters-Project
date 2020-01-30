@@ -8,12 +8,14 @@ public class StepTimer : MonoBehaviour
     public float timeLimit;
     bool moving;
     bool active;
+    private NoiseMaker sfx;
     // Start is called before the first frame update
     void Start()
     {
         stepSound = GetComponentsInChildren<AudioSource>();
         moving = false;
         active = false;
+        sfx = GetComponentInParent<NoiseMaker>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class StepTimer : MonoBehaviour
             timeLimit -= Time.deltaTime;
             if (timeLimit <= 0.0f)
             {
+                sfx.AddSound();
                 stepSound[Random.Range(0, stepSound.Length)].Play();
                 active = false;
             }

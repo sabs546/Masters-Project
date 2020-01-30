@@ -8,12 +8,14 @@ public class NoiseMaker : MonoBehaviour
     [HideInInspector]
     public  float soundRadius;
     private float multiplier;
+    private bool stepped;
 
     public  AudioSource[] sound;
     private Controller    controller;
     // Start is called before the first frame update
     void Start()
     {
+        stepped = false;
         controller = GetComponent<Controller>();
         sound = GetComponentsInChildren<AudioSource>();
     }
@@ -21,17 +23,18 @@ public class NoiseMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     { /// PERHAPS GIVE SOUND A DECAY RATE?
-        if (controller != null)
-        {
-            if (controller.landing && controller.currentSpeed > 1.0f && soundRadius < 10.0f)
-                soundRadius += controller.currentSpeed * Time.deltaTime;
-            else if ((!controller.landing || controller.currentSpeed < 1.0f) && soundRadius > 0.0f)
-                soundRadius -= 10.0f * Time.deltaTime;
-        }
-        else if (soundRadius > 0.0f)
-        {
+        if (soundRadius > 0.0f && !stepped)
             soundRadius -= 10.0f * Time.deltaTime;
-        }
+        gameObject.transform.Find("SoundCircle").localScale = new Vector3(soundRadius * 2, soundRadius * 2, 1.0f);
+        stepped = false;
+    }
+
+    public void AddSound()
+    {
+        stepped = true;
+        if (controller.landing && Mathf.Abs(controller.currentSpeed) > 1.0f && soundRadius < 10.0f)
+                soundRadius = Mathf.Abs(controller.currentSpeed);
+        if (soundRadius > 10.0f) soundRadius = 10.0f;
     }
 
     public void CallSound(uint soundID, int direction = 0)
