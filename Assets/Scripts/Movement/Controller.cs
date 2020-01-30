@@ -102,6 +102,11 @@ public class Controller : MonoBehaviour
                 currentSpeed = 0;
         }
 
+        if (Mathf.Abs(currentSpeed) > 2.0f)
+            GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
+        else
+            GetComponentInChildren<StepTimer>().StopMoving();
+
         if (currentSpeed > topSpeed)
             currentSpeed = topSpeed;
         if (currentSpeed < -topSpeed)
@@ -147,7 +152,14 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) && landing)
         {
+            if (Mathf.Abs(currentSpeed) >= topSpeed)
+                launchPwr *= 1.25f;
+
             currentFall += launchPwr;
+
+            if (Mathf.Abs(currentSpeed) >= topSpeed)
+                launchPwr /= 1.25f;
+
             if (sfx.enabled)
             {
                 sfx.MakeNoise(10.0f);
