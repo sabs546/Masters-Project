@@ -33,7 +33,7 @@ public class WallSetup : MonoBehaviour
                 grip = 1.0f;
                 break;
             case 1: // Rough
-                grip = 5.0f;
+                grip = 10.0f;
                 break;
             case 2:
                 grip = 1.0f;

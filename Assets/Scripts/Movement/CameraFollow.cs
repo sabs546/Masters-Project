@@ -32,36 +32,46 @@ public class CameraFollow : MonoBehaviour
         {
             if (next != trGoal.Length)
             {
-                if (transform.position.x < trGoal[next].position.x)
+                if (transform.position.x < trGoal[next].position.x - 0.1f)
                     speed.x = 20.0f;
-                else if (transform.position.x > trGoal[next].position.x)
+                else if (transform.position.x > trGoal[next].position.x + 0.1f)
                     speed.x = -20.0f;
-                if (transform.position.x < trGoal[next].position.y)
+                else
+                    speed.x = 0.0f;
+
+                if (transform.position.x < trGoal[next].position.y - 0.1f)
                     speed.y = 20.0f;
-                else if (transform.position.y > trGoal[next].position.y)
+                else if (transform.position.y > trGoal[next].position.y + 0.1f)
                     speed.y = -20.0f;
+                else
+                    speed.y = 0.0f;
 
                 transform.Translate(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
-                if (transform.position.x <= trGoal[next].position.x + 0.1f && transform.position.x >= trGoal[next].position.x - 0.1f &&
-                    transform.position.y <= trGoal[next].position.y + 0.1f && transform.position.y >= trGoal[next].position.y - 0.1f)
+                if (transform.position.x < trGoal[next].position.x + 0.1f && transform.position.x > trGoal[next].position.x - 0.1f &&
+                    transform.position.y < trGoal[next].position.y + 0.1f && transform.position.y > trGoal[next].position.y - 0.1f)
                     next++;
             }
             else
             {
-                if (transform.position.x < player.transform.position.x)
+                if (transform.position.x < player.transform.position.x - 0.1f)
                     speed.x = 10.0f;
-                else if (transform.position.x > player.transform.position.x)
+                else if (transform.position.x > player.transform.position.x + 0.1f)
                     speed.x = -10.0f;
-                if (transform.position.y < player.transform.position.y)
+                else
+                    speed.x = 0.0f;
+
+                if (transform.position.y < player.transform.position.y - 0.1f)
                     speed.y = 10.0f;
-                else if (transform.position.y > player.transform.position.y)
+                else if (transform.position.y > player.transform.position.y + 0.1f)
                     speed.y = -10.0f;
+                else
+                    speed.y = 0.0f;
 
                 transform.Translate(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
                 if (transform.position.x < player.transform.position.x + 0.1f && transform.position.x > player.transform.position.x - 0.1f &&
-                    transform.position.y < player.transform.position.y + 0.1f && transform.position.y < player.transform.position.y + 0.1f)
+                    transform.position.y < player.transform.position.y + 0.1f && transform.position.y > player.transform.position.y - 0.1f)
                 {
                     begin = true;
                 }

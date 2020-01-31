@@ -62,6 +62,7 @@ public class Controller : MonoBehaviour
             }
 
             currentFall -= gravity * Time.deltaTime;
+            bool crashLand = landing;
             landing = false;
             hitting = 0;
 
@@ -110,7 +111,21 @@ public class Controller : MonoBehaviour
                     accel = 10.0f;
                     cling = 0.05f;
                 }
+                float tempFall = currentFall;
                 CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2, walls[i].transform.lossyScale / 2, i, oldPos);
+                if (!crashLand && landing)
+                {
+                    sfx.MakeNoise(tempFall / 5);
+                    AudioSource sound = gameObject.transform.Find("Landing sound").GetComponent<AudioSource>();
+                    if (tempFall < -50)
+                        sound.pitch = 1.0f;
+                    else
+                        sound.pitch = 2.0f;
+
+                    sound.volume = -tempFall / 200;
+                    sound.Play();
+                    crashLand = true;
+                }
             }
 
             if (hitting != 0)

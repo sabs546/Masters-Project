@@ -50,14 +50,14 @@ public class ThrowObject : MonoBehaviour
                 transform.position = new Vector3(playerPos.x, obstaclePos.y + (obstacleScale.y + playerScale.y), 0.0f);
                 landing = true;
                 currentFall = 0;
-                wallProperties[i].SetVariables(ref accel, ref cling);
+                //wallProperties[i].SetVariables(ref accel, ref cling);
                 return;
             }
             else if (playerPos.y < obstaclePos.y - obstacleScale.y)
             { // Ceiling
                 transform.position = new Vector3(playerPos.x, obstaclePos.y - (obstacleScale.y + playerScale.y), 0.0f);
                 currentFall = 0;
-                wallProperties[i].SetVariables(ref accel, ref cling);
+                //wallProperties[i].SetVariables(ref accel, ref cling);
                 return;
             }
 
@@ -73,7 +73,7 @@ public class ThrowObject : MonoBehaviour
                 hitting = 1;
                 currentSpeed = 0;
             }
-            wallProperties[i].SetVariables(ref accel, ref cling);
+            //wallProperties[i].SetVariables(ref accel, ref cling);
         }
     }
 }
