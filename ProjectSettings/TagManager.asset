@@ -53,6 +53,12 @@ TagManager:
   - name: Floors and walls
     uniqueID: 846517333
     locked: 0
+  - name: Pretty stuff bg
+    uniqueID: 4223898413
+    locked: 0
+  - name: Pretty stuff fg
+    uniqueID: 2070034667
+    locked: 0
   - name: GUI
     uniqueID: 2937828327
     locked: 0
