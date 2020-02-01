@@ -50,11 +50,11 @@ TagManager:
   - name: Buttons
     uniqueID: 1791787975
     locked: 0
-  - name: Floors and walls
-    uniqueID: 846517333
-    locked: 0
   - name: Pretty stuff bg
     uniqueID: 4223898413
+    locked: 0
+  - name: Floors and walls
+    uniqueID: 846517333
     locked: 0
   - name: Pretty stuff fg
     uniqueID: 2070034667
