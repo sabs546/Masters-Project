@@ -59,6 +59,9 @@ TagManager:
   - name: Pretty stuff fg
     uniqueID: 2070034667
     locked: 0
+  - name: Floors and walls uncovered
+    uniqueID: 593456977
+    locked: 0
   - name: GUI
     uniqueID: 2937828327
     locked: 0
