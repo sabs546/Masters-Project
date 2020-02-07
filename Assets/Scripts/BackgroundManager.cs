@@ -21,7 +21,6 @@ public class BackgroundManager : MonoBehaviour
         controller = player.GetComponent<Controller>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         cameraController = mainCamera.GetComponent<CameraFollow>();
-        transform.position = new Vector3(mainCamera.transform.position.x + (transform.lossyScale.x * 2), mainCamera.transform.position.y + transform.lossyScale.y / 2.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -31,20 +30,30 @@ public class BackgroundManager : MonoBehaviour
         {
             if (!mainCamera.GetComponent<CameraFollow>().begin)
             {
-                backgrounds[0].transform.Translate(cameraController.speed.x / 1.1f * Time.deltaTime, cameraController.speed.y / 1.1f * Time.deltaTime, 0.0f);
-                backgrounds[1].transform.Translate(cameraController.speed.x / 1.2f * Time.deltaTime, cameraController.speed.y / 1.1f * Time.deltaTime, 0.0f);
-                backgrounds[2].transform.Translate(cameraController.speed.x / 1.1f * Time.deltaTime, cameraController.speed.y / 1.1f * Time.deltaTime, 0.0f);
+                backgrounds[0].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
+                backgrounds[1].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
+                backgrounds[2].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
             }
-
-            backgrounds[0].transform.Translate(controller.currentSpeed / 1.1f * Time.deltaTime, controller.currentFall / 1.1f * Time.deltaTime, 0.0f);
-            backgrounds[1].transform.Translate(controller.currentSpeed / 1.2f * Time.deltaTime, controller.currentFall / 1.1f * Time.deltaTime, 0.0f);
-            backgrounds[2].transform.Translate(controller.currentSpeed / 1.1f * Time.deltaTime, controller.currentFall / 1.1f * Time.deltaTime, 0.0f);
+            else
+            {
+                float launch = 0.0f;
+                if (Input.GetKey(KeyCode.W) && controller.landing)
+                {
+                    launch = controller.launchPwr / 1.2f;
+                }
+                backgrounds[0].Translate(-controller.currentSpeed / 1.05f * Time.deltaTime, (-(controller.currentFall - launch) / 1.1f) * Time.deltaTime, 0.0f);
+                backgrounds[1].Translate(-controller.currentSpeed / 1.1f  * Time.deltaTime, (-(controller.currentFall - launch) / 1.2f) * Time.deltaTime, 0.0f);
+                backgrounds[2].Translate(-controller.currentSpeed / 1.05f * Time.deltaTime, (-(controller.currentFall - launch) / 1.1f) * Time.deltaTime, 0.0f);
+            }
         }
     }
 
     public void ResizeBG(float scaling)
     {
         if (!noBG)
+        {
             transform.localScale += new Vector3(scaling * Time.deltaTime, scaling * Time.deltaTime, 0.0f);
+            transform.Translate(scaling * Time.deltaTime, scaling * Time.deltaTime, 0.0f);
+        }
     }
 }

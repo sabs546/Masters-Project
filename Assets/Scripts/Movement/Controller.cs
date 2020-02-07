@@ -24,8 +24,9 @@ public class Controller : MonoBehaviour
     // Hit checks -------
     [HideInInspector]
     public  bool         landing;        // Is it hitting a floor
+    [HideInInspector]
+    public  int          hitting;        // -1/0/1 | Is it hitting a wall
     private int          currentFloor;   // Which floor is it standing on
-    private int          hitting;        // -1/0/1 | Is it hitting a wall
     private GameObject[] walls;          // Store all the walls here
     private WallSetup[]  wallProperties;
     private GameObject   boxCollider;

@@ -58,12 +58,15 @@ public class GuardController : MonoBehaviour
             currentSpeed = topSpeed;
         if (currentFall < terminalV)
             currentFall = terminalV;
-
+        
         transform.Translate(currentSpeed * Time.deltaTime, 0.0f, 0.0f);
         transform.Translate(0.0f, currentFall * Time.deltaTime, 0.0f, Space.World);
 
         for (int i = 0; i < walls.Length; i++) // Basic collision detection, behind this point, everything thinks it's free to move anywhere
         {
+            if (landing && hitting != 0)
+                break;
+
             CollisionCheck(foresight.transform.position, walls[i].transform.position,
                            transform.lossyScale / 2, walls[i].transform.lossyScale / 2, foresight.range, ref foresight.landing);
 
@@ -73,13 +76,27 @@ public class GuardController : MonoBehaviour
 
         if (landing)
         {
-            if (hitting != 0 || (!foresight.landing && !foresight.greenShell))
+            if (!foresight.greenShell)
             {
-                TurnAround();
+                if (hitting != 0 || !foresight.landing)
+                {
+                    TurnAround();
+                }
+                else if (alertLevel == 2 && state.currentState == 3)
+                {
+                    hearing.FaceTheSound();
+                }
+            }
+            else
+            {
+                if (hitting != 0)
+                    TurnAround();
             }
         }
         else
+        {
             foresight.greenShell = false;
+        }
 
         if (state.currentState == 4)
         {
@@ -117,12 +134,13 @@ public class GuardController : MonoBehaviour
                         case 2:
                             if (hearing.GetYDist() > 0)
                             {
-                                foresight.greenShell = true;
-                                state.SetState(5);
+                                if (!foresight.greenShell)
+                                    state.SetState(5);
+                                else
+                                    state.SetState(3);
                             }
                             else
                                 state.SetState(3);
-
                             break;
                         case 3:
                             break;
@@ -145,6 +163,11 @@ public class GuardController : MonoBehaviour
             else if (state.currentState == 5)
             {
                 state.SetState(4);
+                if (alertLevel == 2)
+                {
+                    foresight.greenShell = true;
+                    state.SetState(3);
+                }
             }
         }
         else if (mode == 1)
@@ -163,6 +186,7 @@ public class GuardController : MonoBehaviour
             if (allyController.transform.position.y < transform.position.y &&
                 allyController.transform.position.y > targetPosition.y)
             {
+                state.SetState(3);
                 return;
             }
             else
@@ -192,12 +216,12 @@ public class GuardController : MonoBehaviour
                 return;
             }
 
-            if (playerPos.x > obstaclePos.x)
+            if (playerPos.x > obstaclePos.x + obstacleScale.x && hitting != 1)
             { // Left wall
                 transform.position = new Vector3(obstaclePos.x + (obstacleScale.x + playerScale.x) + range, transform.position.y, 0.0f);
                 hitting = -1;
             }
-            else if (playerPos.x < obstaclePos.x)
+            else if (playerPos.x < obstaclePos.x - obstacleScale.x && hitting != -1)
             { // Right wall
                 transform.position = new Vector3(obstaclePos.x - (obstacleScale.x + playerScale.x) - range, transform.position.y, 0.0f);
                 hitting = 1;

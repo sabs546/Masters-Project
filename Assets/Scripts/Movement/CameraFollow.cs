@@ -89,7 +89,7 @@ public class CameraFollow : MonoBehaviour
                 if (camera.orthographicSize < 20.0f)
                 {
                     camera.orthographicSize += 10.0f * Time.deltaTime;
-                    bg.ResizeBG(1.0f);
+                    bg.ResizeBG(4.0f);
                 }
                 else if (camera.orthographicSize > 20.0f)
                     camera.orthographicSize = 20.0f;
@@ -99,7 +99,7 @@ public class CameraFollow : MonoBehaviour
                 if (camera.orthographicSize > 10.0f)
                 {
                     camera.orthographicSize -= 10.0f * Time.deltaTime;
-                    bg.ResizeBG(-1.0f);
+                    bg.ResizeBG(-4.0f);
                 }
                 else if (camera.orthographicSize < 10.0f)
                     camera.orthographicSize = 10.0f;
