@@ -19,7 +19,7 @@ public class GuardController : MonoBehaviour
     private bool         landing;          // Is it hitting a floor
     private int          hitting;          // -1/0/1 | Is it hitting a wall
     private int          direction;        // -1/+1  | Which way is he facing
-    private int          alertLevel;       // The higher this gets, the more thorough they are
+    public  int          alertLevel;       // The higher this gets, the more thorough they are
     private Vector3      targetPosition;   // Position of player, if he hears it
 
     // Storing externals -------
@@ -103,7 +103,9 @@ public class GuardController : MonoBehaviour
                         {
                             GuardController allyController = allies[i].GetComponent<GuardController>();
                             allyController.SetTargetPos(targetPosition);
-                            allyController.Contact();
+                            if (allyController.transform.position.y > transform.position.y &&
+                                allyController.transform.position.y > targetPosition.y)
+                                allyController.Contact();
                         }
                     }
 
@@ -113,9 +115,14 @@ public class GuardController : MonoBehaviour
                             state.SetState(3);
                             break;
                         case 2:
-                            state.SetState(3);
                             if (hearing.GetYDist() > 0)
+                            {
                                 foresight.greenShell = true;
+                                state.SetState(5);
+                            }
+                            else
+                                state.SetState(3);
+
                             break;
                         case 3:
                             break;
@@ -153,7 +160,8 @@ public class GuardController : MonoBehaviour
         for (int i = 0; i < allies.Length; i++)
         { // Check if a guard is below you who is above the noise
             GuardController allyController = allies[i].GetComponent<GuardController>();
-            if (allyController.transform.position.y < transform.position.y)
+            if (allyController.transform.position.y < transform.position.y &&
+                allyController.transform.position.y > targetPosition.y)
             {
                 return;
             }

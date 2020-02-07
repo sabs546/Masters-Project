@@ -50,6 +50,9 @@ TagManager:
   - name: Buttons
     uniqueID: 1791787975
     locked: 0
+  - name: Background
+    uniqueID: 624135763
+    locked: 0
   - name: Pretty stuff bg
     uniqueID: 4223898413
     locked: 0

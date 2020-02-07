@@ -16,7 +16,8 @@ public class Controller : MonoBehaviour
     
     [HideInInspector]
     public  float        currentSpeed;   // Speed the object is running at
-    private float        currentFall;    // Speed the object is falling at
+    [HideInInspector]
+    public  float        currentFall;    // Speed the object is falling at
     private float        resetGravity;
     private bool         gripSet;        // What surface are you hitting
     

@@ -7,13 +7,14 @@ public class CameraFollow : MonoBehaviour
     private Controller player;
     private GameObject[] goal;
     private Transform[] trGoal;
-
+    
     public  bool begin; // Has the camera shown the goal yet
     private int next; // Which goal is it going to
-    private Vector2 speed;
+    public  Vector2 speed;
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.Find("Runner").GetComponent<Controller>();
         goal = GameObject.FindGameObjectsWithTag("Goal");
         trGoal = new Transform[goal.Length];
@@ -80,20 +81,28 @@ public class CameraFollow : MonoBehaviour
         else
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+            Camera camera = GetComponent<Camera>();
+            BackgroundManager bg = GameObject.Find("Background").GetComponent<BackgroundManager>();
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                if (GetComponent<Camera>().orthographicSize < 20.0f)
-                    GetComponent<Camera>().orthographicSize += 10.0f * Time.deltaTime;
-                else if (GetComponent<Camera>().orthographicSize > 20.0f)
-                    GetComponent<Camera>().orthographicSize = 20.0f;
+                if (camera.orthographicSize < 20.0f)
+                {
+                    camera.orthographicSize += 10.0f * Time.deltaTime;
+                    bg.ResizeBG(1.0f);
+                }
+                else if (camera.orthographicSize > 20.0f)
+                    camera.orthographicSize = 20.0f;
             }
             else
             {
-                if (GetComponent<Camera>().orthographicSize > 10.0f)
-                    GetComponent<Camera>().orthographicSize -= 10.0f * Time.deltaTime;
-                else if (GetComponent<Camera>().orthographicSize < 10.0f)
-                    GetComponent<Camera>().orthographicSize = 10.0f;
+                if (camera.orthographicSize > 10.0f)
+                {
+                    camera.orthographicSize -= 10.0f * Time.deltaTime;
+                    bg.ResizeBG(-1.0f);
+                }
+                else if (camera.orthographicSize < 10.0f)
+                    camera.orthographicSize = 10.0f;
             }
         }
     }
