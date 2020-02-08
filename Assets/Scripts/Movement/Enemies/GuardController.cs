@@ -102,9 +102,8 @@ public class GuardController : MonoBehaviour
         {
             if (gameObject.GetComponent<Timer>() == null)
             {
-                gameObject.AddComponent<Timer>();
+                gameObject.AddComponent<Timer>().SetLimit(2.0f);
                 timer = GetComponent<Timer>();
-                timer.SetLimit(2.0f);
             }
             else
             {
@@ -139,8 +138,6 @@ public class GuardController : MonoBehaviour
                                 else
                                     state.SetState(3);
                             }
-                            else
-                                state.SetState(3);
                             break;
                         case 3:
                             break;
@@ -163,11 +160,9 @@ public class GuardController : MonoBehaviour
             else if (state.currentState == 5)
             {
                 state.SetState(4);
-                if (alertLevel == 2)
-                {
-                    foresight.greenShell = true;
+                if (foresight.greenShell)
                     state.SetState(3);
-                }
+                foresight.greenShell = true;
             }
         }
         else if (mode == 1)

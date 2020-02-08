@@ -31,7 +31,7 @@ public class BackgroundManager : MonoBehaviour
             if (!mainCamera.GetComponent<CameraFollow>().begin)
             {
                 backgrounds[0].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
-                backgrounds[1].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
+                backgrounds[1].Translate(-cameraController.speed.x / 3.5f * Time.deltaTime, -cameraController.speed.y / 3.5f * Time.deltaTime, 0.0f);
                 backgrounds[2].Translate(-cameraController.speed.x / 4f * Time.deltaTime, -cameraController.speed.y / 4f * Time.deltaTime, 0.0f);
             }
             else
@@ -41,9 +41,9 @@ public class BackgroundManager : MonoBehaviour
                 {
                     launch = controller.launchPwr / 1.2f;
                 }
-                backgrounds[0].Translate(-controller.currentSpeed / 1.05f * Time.deltaTime, (-(controller.currentFall - launch) / 1.1f) * Time.deltaTime, 0.0f);
-                backgrounds[1].Translate(-controller.currentSpeed / 1.1f  * Time.deltaTime, (-(controller.currentFall - launch) / 1.2f) * Time.deltaTime, 0.0f);
-                backgrounds[2].Translate(-controller.currentSpeed / 1.05f * Time.deltaTime, (-(controller.currentFall - launch) / 1.1f) * Time.deltaTime, 0.0f);
+                backgrounds[0].Translate(-controller.currentSpeed / 4f * Time.deltaTime, (-(controller.currentFall - launch) / 4f) * Time.deltaTime, 0.0f);
+                backgrounds[1].Translate(-controller.currentSpeed / 3.5f  * Time.deltaTime, (-(controller.currentFall - launch) / 3.5f) * Time.deltaTime, 0.0f);
+                backgrounds[2].Translate(-controller.currentSpeed / 4f * Time.deltaTime, (-(controller.currentFall - launch) / 4f) * Time.deltaTime, 0.0f);
             }
         }
     }
