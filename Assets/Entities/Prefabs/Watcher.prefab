@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accel: 0
-  gravity: 0.1
+  gravity: 100
   terminalV: -50
   topSpeed: 0
+  alertLevel: 0
 --- !u!114 &3372315618416725420
 MonoBehaviour:
   m_ObjectHideFlags: 0

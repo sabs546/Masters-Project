@@ -44,13 +44,13 @@ public class GuardController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //--------------------------------------------------
         // - Movement -
         //-------
-        currentSpeed += accel;
-        currentFall -= gravity;
+        currentSpeed += accel * Time.deltaTime;
+        currentFall -= gravity * Time.deltaTime;
         landing = false;
         hitting = 0;
 
@@ -96,6 +96,7 @@ public class GuardController : MonoBehaviour
         else
         {
             foresight.greenShell = false;
+            state.SetState(3);
         }
 
         if (state.currentState == 4)
@@ -159,10 +160,15 @@ public class GuardController : MonoBehaviour
             }
             else if (state.currentState == 5)
             {
-                state.SetState(4);
                 if (foresight.greenShell)
                     state.SetState(3);
-                foresight.greenShell = true;
+                else
+                    state.SetState(4);
+
+                if (hearing.GetYDist() < 0 && alertLevel < 2)
+                    foresight.greenShell = false;
+                else
+                    foresight.greenShell = true;
             }
         }
         else if (mode == 1)
