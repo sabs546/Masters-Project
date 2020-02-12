@@ -13,7 +13,7 @@ public class OpponentState : MonoBehaviour
 
     private void Start()
     {
-        visionSense = GetComponent<ConeOfVision>();
+        visionSense = GetComponentInChildren<ConeOfVision>();
         controller = GetComponent<GuardController>();
         hearing = GetComponent<Hearing>();
         SetState(currentState);
