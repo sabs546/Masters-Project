@@ -206,8 +206,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3448334226126230557}
-  - component: {fileID: 4229083611663930047}
-  - component: {fileID: 2776635780037516535}
+  - component: {fileID: 65905062242722589}
+  - component: {fileID: 7374917688476269424}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -229,7 +229,7 @@ Transform:
   m_Father: {fileID: 3372315618416725422}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &4229083611663930047
+--- !u!23 &65905062242722589
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba52f00a48fad1c4f8a7ba078916a386, type: 2}
+  - {fileID: 2100000, guid: 8b49ee2e56009034b8a1ac40431daba0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -267,7 +267,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &2776635780037516535
+--- !u!33 &7374917688476269424
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

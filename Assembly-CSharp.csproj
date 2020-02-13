@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Vision\ConeOfVision.cs" />
     <Compile Include="Assets\Scripts\Vision\VisionGUI.cs" />
+    <None Include="Assets\Entities\Sprites\Decor\DoubleSided.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Saber/Desktop/Masters-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

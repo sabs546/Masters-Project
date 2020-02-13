@@ -26,14 +26,15 @@ public class ConeOfVision : MonoBehaviour
 
         mesh = new Mesh();
         GetComponentInChildren<MeshFilter>().mesh = mesh;
+        GetComponentInChildren<MeshRenderer>().sortingLayerName = "Floors and walls";
     }
 
     private void Update()
     {
-        //FindVisibleTargets();
-        float angle = 35.0f;
+        FindVisibleTargets();
+        float angle = viewAngle / 2;
         Vector3 origin = Vector3.zero;
-        int rayCount = 500;
+        int rayCount = 300;
         float angleIncrease = viewAngle / rayCount;
 
         Vector3[] vertices = new Vector3[rayCount + 1 + 1];
@@ -54,7 +55,7 @@ public class ConeOfVision : MonoBehaviour
             }
             else
             {
-                vertex = raycastHit2D.point;
+                vertex = origin + GetVectorFromAngle(angle) * raycastHit2D.distance;
             }
             vertices[vertexIndex] = vertex;
 

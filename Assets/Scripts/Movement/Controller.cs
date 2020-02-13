@@ -26,6 +26,9 @@ public class Controller : MonoBehaviour
     public  bool         landing;        // Is it hitting a floor
     [HideInInspector]
     public  int          hitting;        // -1/0/1 | Is it hitting a wall
+    public  int          ammo;           // How many decoys can you store
+    public  GameObject   decoy;          // Stores the decoy object you can throw out
+
     private int          currentFloor;   // Which floor is it standing on
     private GameObject[] walls;          // Store all the walls here
     private WallSetup[]  wallProperties;
@@ -173,6 +176,12 @@ public class Controller : MonoBehaviour
                     GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
                 else
                     GetComponentInChildren<StepTimer>().StopMoving();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Instantiate(decoy, transform);
+                decoy.GetComponent<NoiseMaker>().MakeNoise(20.0f);
             }
         }
     }
