@@ -22,7 +22,7 @@ public class NoiseMaker : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { /// PERHAPS GIVE SOUND A DECAY RATE?
+    {
         if (soundRadius > 0.0f && !stepped)
             soundRadius -= 10.0f * Time.deltaTime;
         gameObject.transform.Find("SoundCircle").localScale = new Vector3(soundRadius * 2, soundRadius * 2, 1.0f);

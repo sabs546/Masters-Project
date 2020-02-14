@@ -26,8 +26,8 @@ public class Controller : MonoBehaviour
     public  bool         landing;        // Is it hitting a floor
     [HideInInspector]
     public  int          hitting;        // -1/0/1 | Is it hitting a wall
-    public  int          ammo;           // How many decoys can you store
     public  GameObject   decoy;          // Stores the decoy object you can throw out
+    private GameObject   newDecoy;       // The decoy clone that spawns
 
     private int          currentFloor;   // Which floor is it standing on
     private GameObject[] walls;          // Store all the walls here
@@ -62,9 +62,7 @@ public class Controller : MonoBehaviour
             if (currentFall < 0.0f && gravity < resetGravity * 1.01f)
                 gravity *= 1.01f;
             else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
-            {
                 gravity *= 0.95f;
-            }
 
             currentFall -= gravity * Time.deltaTime;
             bool crashLand = landing;
@@ -178,10 +176,11 @@ public class Controller : MonoBehaviour
                     GetComponentInChildren<StepTimer>().StopMoving();
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && newDecoy == null)
             {
-                Instantiate(decoy, transform);
-                decoy.GetComponent<NoiseMaker>().MakeNoise(20.0f);
+                newDecoy = Instantiate(decoy, transform.position, transform.rotation);
+                newDecoy.AddComponent<Timer>().SetLimit(10.0f);
+                newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 2.0f));
             }
         }
     }
