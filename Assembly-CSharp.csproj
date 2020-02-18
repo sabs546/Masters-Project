@@ -89,7 +89,6 @@
     <Compile Include="Assets\Scripts\Sound\NoiseMaker.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundWaveGUI.cs" />
     <Compile Include="Assets\Scripts\Sound\StepTimer.cs" />
-    <Compile Include="Assets\Scripts\Sound\ThrowObject.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Vision\ConeOfVision.cs" />

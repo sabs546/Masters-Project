@@ -48,14 +48,14 @@ public class ConeOfVision : MonoBehaviour
         for (int i = 0; i <= rayCount; i++)
         {
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, GetVectorFromAngle(angle), viewRadius);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, GetVectorFromAngle(angle) * controller.GetDirection(), viewRadius);
             if (raycastHit2D.collider == null)
             {
-                vertex = origin + GetVectorFromAngle(angle) * viewRadius;
+                vertex = origin + (GetVectorFromAngle(angle) * controller.GetDirection()) * viewRadius;
             }
             else
             {
-                vertex = origin + GetVectorFromAngle(angle) * raycastHit2D.distance;
+                vertex = origin + (GetVectorFromAngle(angle) * controller.GetDirection()) * raycastHit2D.distance;
             }
             vertices[vertexIndex] = vertex;
 

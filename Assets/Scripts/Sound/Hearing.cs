@@ -19,7 +19,6 @@ public class Hearing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectsWithTag("NoiseMaker");
         sprite = GetComponent<SpriteRenderer>();
         state = GetComponent<OpponentState>();
         controller = GetComponent<GuardController>();
@@ -29,6 +28,7 @@ public class Hearing : MonoBehaviour
     // Update is called once per frame
     void Update()
     { /// NEXT TIME HE NEEDS TO MOVE CLOSER TO THE NOISE, NOT JUST THE OTHER SIDE OF THE PLATFORM
+        target = GameObject.FindGameObjectsWithTag("NoiseMaker");
         for (int i = 0; i < target.Length; i++)
         {
             soundSource = target[i].GetComponentInParent<NoiseMaker>();

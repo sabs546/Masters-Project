@@ -30,6 +30,7 @@ public class GuardController : MonoBehaviour
     private ForesightController foresight; // See the future, or at least the ground ahead of you
     private Hearing             hearing;   // To drop to lower platforms
     private GameObject[]        allies;    // To alert higher guards
+    public  Transform           cov;       // Visual vision cone
 
     // Start is called before the first frame update
     void Start()
@@ -156,6 +157,7 @@ public class GuardController : MonoBehaviour
             if (state.currentState < 4)
             {
                 transform.Rotate(0.0f, 180.0f, 0.0f);
+                cov.Rotate(0.0f, 180.0f, 0.0f);
                 direction = -direction;
             }
             else if (state.currentState == 5)

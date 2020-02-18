@@ -180,7 +180,10 @@ public class Controller : MonoBehaviour
             {
                 newDecoy = Instantiate(decoy, transform.position, transform.rotation);
                 newDecoy.AddComponent<Timer>().SetLimit(10.0f);
-                newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 2.0f));
+                if (Input.GetKey(KeyCode.W))
+                    newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 3.0f));
+                else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                    newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 2.0f));
             }
         }
     }

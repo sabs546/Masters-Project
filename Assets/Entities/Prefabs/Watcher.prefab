@@ -103,6 +103,7 @@ MonoBehaviour:
   terminalV: -50
   topSpeed: 0
   alertLevel: 0
+  cov: {fileID: 3448334226126230557}
 --- !u!114 &-3399442523889121463
 MonoBehaviour:
   m_ObjectHideFlags: 0
