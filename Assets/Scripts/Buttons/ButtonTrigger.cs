@@ -37,6 +37,10 @@ public class ButtonTrigger : MonoBehaviour
                 BaseButton panic = new PanicButton();
                 panic.Trigger(transform);
                 break;
+            case 999: // Empty
+                BaseButton empty = new Empty();
+                empty.Trigger(transform);
+                break;
         }
     }
 

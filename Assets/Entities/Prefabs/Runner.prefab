@@ -1290,7 +1290,6 @@ MonoBehaviour:
   currentFall: 0
   landing: 0
   hitting: 0
-  ammo: 2
   decoy: {fileID: 5826683660176952698, guid: 147593745f57ebe4598aa801c976b00e, type: 3}
 --- !u!114 &-220978043420917489
 MonoBehaviour:

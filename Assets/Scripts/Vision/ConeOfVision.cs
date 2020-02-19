@@ -27,6 +27,7 @@ public class ConeOfVision : MonoBehaviour
         mesh = new Mesh();
         GetComponentInChildren<MeshFilter>().mesh = mesh;
         GetComponentInChildren<MeshRenderer>().sortingLayerName = "Floors and walls";
+        GetComponentInChildren<MeshRenderer>().sortingOrder = -1;
     }
 
     private void Update()

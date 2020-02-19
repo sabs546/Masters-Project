@@ -176,6 +176,7 @@ public class GuardController : MonoBehaviour
         else if (mode == 1)
         {
             transform.Rotate(0.0f, 180.0f, 0.0f);
+            cov.Rotate(0.0f, 180.0f, 0.0f);
             direction = -direction;
             state.SetState(5);
         }

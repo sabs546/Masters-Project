@@ -9308,7 +9308,7 @@ GameObject:
   - component: {fileID: 1965424593}
   - component: {fileID: 1965424594}
   m_Layer: 0
-  m_Name: Glass 1
+  m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
