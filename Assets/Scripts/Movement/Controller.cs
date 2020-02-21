@@ -59,7 +59,7 @@ public class Controller : MonoBehaviour
         //-------
         if (camera.begin)
         {
-            if (currentFall < 0.0f && gravity < resetGravity * 1.01f)
+            if ((currentFall < 0.0f && gravity < resetGravity * 1.01f) | !Input.GetKey(KeyCode.W))
                 gravity *= 1.01f;
             else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
                 gravity *= 0.95f;

@@ -154,7 +154,7 @@ public class GuardController : MonoBehaviour
     {
         if (mode == 0)
         {
-            if (state.currentState < 4)
+            if (state.currentState == 3)
             {
                 transform.Rotate(0.0f, 180.0f, 0.0f);
                 cov.Rotate(0.0f, 180.0f, 0.0f);
