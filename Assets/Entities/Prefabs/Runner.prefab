@@ -1282,10 +1282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accel: 0
   launchPwr: 30
-  gravity: 100
+  gravity: 110
   cling: 1
   topSpeed: 20
-  terminalV: -100
+  terminalV: -110
   currentSpeed: 0
   currentFall: 0
   landing: 0

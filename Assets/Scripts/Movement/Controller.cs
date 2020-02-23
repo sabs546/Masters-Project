@@ -59,10 +59,10 @@ public class Controller : MonoBehaviour
         //-------
         if (camera.begin)
         {
-            if ((currentFall < 0.0f && gravity < resetGravity * 1.01f) | !Input.GetKey(KeyCode.W))
-                gravity *= 1.01f;
+            if (currentFall < 0.0f && gravity < resetGravity * 1.1f)
+                gravity *= 1.1f;
             else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
-                gravity *= 0.95f;
+                gravity *= 0.9f;
 
             currentFall -= gravity * Time.deltaTime;
             bool crashLand = landing;
@@ -162,7 +162,7 @@ public class Controller : MonoBehaviour
 
                 if (sfx.enabled)
                 {
-                    sfx.MakeNoise(10.0f);
+                    sfx.MakeNoise(1.0f + (currentSpeed / 2.0f));
                     sfx.CallSound(0);
                 }
             }
