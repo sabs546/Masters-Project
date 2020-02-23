@@ -8,18 +8,22 @@ public class ButtonTrigger : MonoBehaviour
     private GameObject player;
     public int buttonType;
     GameObject[] guards;
+    private Timer timer;
     // Start is called before the first frame update
     void Start()
     {
         currentState = 2;
         player = GameObject.FindGameObjectWithTag("Player");
         guards = GameObject.FindGameObjectsWithTag("Guard");
+        timer = null;
     }
 
     // Update is called once per frame
     void Update()
     {
         CollisionCheck(player.transform.position, transform.position, player.transform.lossyScale, transform.lossyScale);
+        if (timer != null && timer.timeUp)
+            GetComponentInChildren<Canvas>().enabled = false;
     }
 
     public void OnPress(int type)
@@ -86,6 +90,12 @@ public class ButtonTrigger : MonoBehaviour
                 OnPress(buttonType);
                 if (GetComponent<QuickInfo>() != null)
                     GetComponent<QuickInfo>().triggered = true;
+                else if (GetComponentInChildren<Canvas>() != null)
+                {
+                    GetComponentInChildren<Canvas>().enabled = true;
+                    gameObject.AddComponent<Timer>().SetLimit(5.0f);
+                    timer = GetComponent<Timer>();
+                }
             }
         }
     }

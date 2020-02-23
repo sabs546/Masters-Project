@@ -46,6 +46,7 @@ public class NoiseMaker : MonoBehaviour
 
     public void MakeNoise(float radius)
     {
-        soundRadius = Mathf.Abs(radius);
+        if (soundRadius < Mathf.Abs(radius))
+            soundRadius = Mathf.Abs(radius);
     }
 }

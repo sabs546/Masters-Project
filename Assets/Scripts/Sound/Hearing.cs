@@ -5,16 +5,14 @@ using UnityEngine;
 public class Hearing : MonoBehaviour
 {
     private float           distanceFromNoise;
-    private float           xDist;
-    private float           yDist;
-    //public  int            suspicionLevel; This can be added in later
-    public  bool            deaf;
-    private GameObject[]    target;
-    private NoiseMaker      soundSource;
-    private OpponentState   state;
-    private SpriteRenderer  sprite;
-    private GuardController controller;
-    private Hearing         hearing;
+    private float           xDist;       // X from noise
+    private float           yDist;       // Y from noise
+    public  bool            deaf;        // Can they hear in their current state
+    private GameObject[]    target;      // What makes noises in this scene
+    private NoiseMaker      soundSource; // What is making the noise
+    private OpponentState   state;       // State script for the guard, for when they hear something
+    private SpriteRenderer  sprite;      // Turn red
+    private GuardController controller;  // Setting the position of the target
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +20,6 @@ public class Hearing : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         state = GetComponent<OpponentState>();
         controller = GetComponent<GuardController>();
-        hearing = GetComponent<Hearing>();
     }
 
     // Update is called once per frame
@@ -58,14 +55,14 @@ public class Hearing : MonoBehaviour
 
     public void FaceTheSound()
     {
-        if (hearing.xDist < 1)
+        if (xDist < 1)
         {
             if (controller.GetDirection() != 1)
                 controller.TurnAround(1);
             else if (yDist > 0)
                 controller.TurnAround();
         }
-        else if (hearing.xDist > -1)
+        else if (xDist > -1)
         {
             if (controller.GetDirection() != -1)
                 controller.TurnAround(1);
