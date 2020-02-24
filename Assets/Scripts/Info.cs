@@ -8,28 +8,22 @@ public class Info : MonoBehaviour
     private bool colliding;
     private GameObject player;
     private new GenericCollider collider;
-
-    [TextArea]
-    public string tooltipTextToShow;
+    private Canvas canvas;
     // Start is called before the first frame update
     void Start()
     {
         colliding = false;
         player = GameObject.FindGameObjectWithTag("Player");
         collider = GetComponent<GenericCollider>();
+        canvas = GetComponentInChildren<Canvas>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnGUI()
-    {
         if (collider.CollisionCheck(transform.position, player.transform.position, transform.lossyScale / 2, player.transform.lossyScale / 2))
-        {
-            GUI.TextArea(new Rect(0, 0, Screen.width, Screen.height / 10), tooltipTextToShow, limit);
-        }
+            canvas.enabled = true;
+        else
+            canvas.enabled = false;
     }
 }
