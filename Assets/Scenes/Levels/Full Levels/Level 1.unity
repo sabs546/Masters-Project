@@ -4884,7 +4884,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -71068883
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a9a1220c46a45b548a1f6e620ec79082, type: 3}
   m_Color: {r: 0.19607845, g: 0.2392157, b: 0.37647063, a: 1}
   m_FlipX: 0
@@ -5126,6 +5126,21 @@ PrefabInstance:
         type: 3}
       propertyPath: currentState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286777005536509841, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: I think I heard someone... I guess... I should check this out...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428365596768588196, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: I'll hop down but I don't know if I'll find anything
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514415930475591846, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: I can't reach this sound, can someone check this out?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
@@ -8678,6 +8693,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897835589966015905, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Hey I think there''s someone here, I can''t get to them
+
+        Can anyone check it out?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286777005536509841, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: What was that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428365596768588196, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: Out of my reach, sorry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514415930475591846, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: Hey I think I hear someone above me, sorry is anyone nearby to check
+        it out?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
@@ -13586,7 +13624,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -71068883
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a9a1220c46a45b548a1f6e620ec79082, type: 3}
   m_Color: {r: 0.19607845, g: 0.2392157, b: 0.37647063, a: 1}
   m_FlipX: 0
@@ -18044,6 +18082,21 @@ PrefabInstance:
       propertyPath: currentState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1286777005536509841, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: Someone is down there...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428365596768588196, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: Gimme a sec, I'll figure out what's going on
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514415930475591846, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Text
+      value: I need someone to check this out
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
 --- !u!1001 &1808067883
@@ -18126,6 +18179,11 @@ PrefabInstance:
     - target: {fileID: 9003012491254174839, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003012491254174839, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901779371409947492, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,

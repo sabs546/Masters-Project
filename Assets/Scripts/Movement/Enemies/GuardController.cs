@@ -11,6 +11,9 @@ public class GuardController : MonoBehaviour
     public  float        gravity;          // Object fall rate
     public  float        terminalV;        // Max falling speed
     public  float        topSpeed;         // Maximum speed of the object
+    public  Canvas       suspicionText;    // Text shown when they hear something
+    public  Canvas       contactingBubble; // Text shown when they talk to someone else
+    public  Canvas       contactedText;    // Text shown when someone tells them something
     
     private float        currentSpeed;     // Speed the object is running at
     private float        currentFall;      // Speed the object is falling at
