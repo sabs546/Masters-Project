@@ -130,7 +130,8 @@ public class GuardController : MonoBehaviour
                     switch (alertLevel)
                     {
                         case 1:
-                            state.SetState(3);
+                            if (state.currentState > 2)
+                                state.SetState(3);
                             break;
                         case 2:
                             if (hearing.GetYDist() > 0)
@@ -138,7 +139,11 @@ public class GuardController : MonoBehaviour
                                 if (!foresight.greenShell)
                                     state.SetState(5);
                                 else
+                                {
+                                    if (state.currentState == 2)
+                                        foresight.greenShell = true;
                                     state.SetState(3);
+                                }
                             }
                             break;
                         case 3:
@@ -165,7 +170,12 @@ public class GuardController : MonoBehaviour
                 if (foresight.greenShell)
                     state.SetState(3);
                 else
-                    state.SetState(4);
+                {
+                    if (!foresight.landing)
+                        state.SetState(4);
+                    else
+                        state.SetState(3);
+                }
 
                 if (hearing.GetYDist() < 0 && alertLevel < 2)
                     foresight.greenShell = false;
@@ -190,13 +200,17 @@ public class GuardController : MonoBehaviour
             if (allyController.transform.position.y < transform.position.y &&
                 allyController.transform.position.y > targetPosition.y)
             {
-                state.SetState(3);
+                if (state.currentState > 2)
+                    state.SetState(3);
                 return;
             }
             else
             {
-                state.SetState(4);
-                hearing.FaceTheSound();
+                if (state.currentState > 2)
+                {
+                    state.SetState(4);
+                    hearing.FaceTheSound();
+                }
             }
         }
     }
