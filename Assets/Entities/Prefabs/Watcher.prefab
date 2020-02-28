@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 324117049511798094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 0.0313}
+  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 1}
   m_Children: []
   m_Father: {fileID: 3372315618416725422}
   m_RootOrder: 4
@@ -171,7 +171,7 @@ RectTransform:
   m_GameObject: {fileID: 1120451637062168551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 0.0313}
+  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 1}
   m_Children: []
   m_Father: {fileID: 3372315618416725422}
   m_RootOrder: 2
@@ -388,7 +388,7 @@ MonoBehaviour:
   terminalV: -50
   topSpeed: 0
   suspicionText: {fileID: 4723754565017341246}
-  contactingBubble: {fileID: 3661308038200639719}
+  contactingText: {fileID: 3661308038200639719}
   contactedText: {fileID: 4570086387330105837}
   alertLevel: 0
   cov: {fileID: 3448334226126230557}
@@ -516,7 +516,7 @@ RectTransform:
   m_GameObject: {fileID: 6012922790921259727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 0.0313}
+  m_LocalScale: {x: 0.0069999998, y: 0.0069999998, z: 1}
   m_Children: []
   m_Father: {fileID: 3372315618416725422}
   m_RootOrder: 3

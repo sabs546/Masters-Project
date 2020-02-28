@@ -12,7 +12,7 @@ public class GuardController : MonoBehaviour
     public  float        terminalV;        // Max falling speed
     public  float        topSpeed;         // Maximum speed of the object
     public  Canvas       suspicionText;    // Text shown when they hear something
-    public  Canvas       contactingBubble; // Text shown when they talk to someone else
+    public  Canvas       contactingText;   // Text shown when they talk to someone else
     public  Canvas       contactedText;    // Text shown when someone tells them something
     
     private float        currentSpeed;     // Speed the object is running at
@@ -101,6 +101,7 @@ public class GuardController : MonoBehaviour
         {
             foresight.greenShell = false;
             state.SetState(3);
+            suspicionText.enabled = true;
         }
 
         if (state.currentState == 4)
@@ -146,10 +147,9 @@ public class GuardController : MonoBehaviour
                                     if (state.currentState == 2)
                                         foresight.greenShell = true;
                                     state.SetState(3);
+                                    contactingText.enabled = true;
                                 }
                             }
-                            break;
-                        case 3:
                             break;
                     }
                     Destroy(gameObject.GetComponent<Timer>());
@@ -173,17 +173,20 @@ public class GuardController : MonoBehaviour
                 if (foresight.greenShell)
                     state.SetState(3);
                 else
-                {
+                { // Might need to figure this out, state 4 loop, it should turn off if greenshell is on, turn greenshell on when state is 5 immediately, if above opponent
                     if (!foresight.landing)
                         state.SetState(4);
                     else
+                    {
                         state.SetState(3);
-                }
+                        suspicionText.enabled = true;
+                    }
 
-                if (hearing.GetYDist() < 0 && alertLevel < 2)
-                    foresight.greenShell = false;
-                else
-                    foresight.greenShell = true;
+                    if (hearing.GetYDist() < 0 && alertLevel < 2)
+                        foresight.greenShell = false;
+                    else
+                        foresight.greenShell = true;
+                }
             }
         }
         else if (mode == 1)
@@ -205,6 +208,7 @@ public class GuardController : MonoBehaviour
             {
                 if (state.currentState > 2)
                     state.SetState(3);
+                contactedText.enabled = true;
                 return;
             }
             else

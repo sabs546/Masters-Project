@@ -40,10 +40,11 @@ public class Hearing : MonoBehaviour
                     sprite.color = Color.red;
                     controller.SetTargetPos(target[i].transform.position); // Stores the players position when heard
 
-                    if (state.currentState != 4)
+                    if (state.currentState < 4 && state.currentState > 1)
+                    {
                         state.SetState(5);
-
-                    FaceTheSound();
+                        FaceTheSound();
+                    }
                 }
                 else
                 {
