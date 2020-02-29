@@ -40,10 +40,11 @@ public class Hearing : MonoBehaviour
                     sprite.color = Color.red;
                     controller.SetTargetPos(target[i].transform.position); // Stores the players position when heard
 
-                    if (state.currentState < 4 && state.currentState > 1)
-                    {
-                        state.SetState(5);
-                        FaceTheSound();
+                    state.SetState(4);
+                    FaceTheSound();
+                    if (yDist > 0 && controller.alertLevel == 2)
+                    { // Let him fall off cliffs if he's above the sound and been bothered before
+                        GetComponent<ForesightController>().greenShell = true;
                     }
                 }
                 else
@@ -56,19 +57,13 @@ public class Hearing : MonoBehaviour
 
     public void FaceTheSound()
     {
-        if (xDist < 1)
+        if (xDist < 1 && controller.GetDirection() != 1)
         {
-            if (controller.GetDirection() != 1)
-                controller.TurnAround(1);
-            else if (yDist > 0)
-                controller.TurnAround();
+            controller.TurnAround();
         }
-        else if (xDist > -1)
+        else if (xDist > -1 && controller.GetDirection() != -1)
         {
-            if (controller.GetDirection() != -1)
-                controller.TurnAround(1);
-            else if (yDist > 0)
-                controller.TurnAround();
+            controller.TurnAround();
         }
     }
 

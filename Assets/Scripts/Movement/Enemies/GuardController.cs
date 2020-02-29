@@ -79,28 +79,25 @@ public class GuardController : MonoBehaviour
         }
 
         if (landing)
-        {
+        { // If grounded
             if (!foresight.greenShell)
-            {
+            { // And capable of jumping off cliffs
                 if (hitting != 0 || !foresight.landing)
-                {
+                { // Then don't
                     TurnAround();
-                }
-                else if (alertLevel == 2 && state.currentState == 3)
-                {
-                    hearing.FaceTheSound();
                 }
             }
             else
-            {
+            { // Otherwise only turn at walls
                 if (hitting != 0)
                     TurnAround();
             }
         }
         else
-        {
+        { // If you've fell off a cliff already, don't do it again
             foresight.greenShell = false;
-            state.SetState(3);
+            hearing.FaceTheSound(); // You've just jumped off to find the player, don't keep falling
+            state.SetState(3); // Walk to the sound
             suspicionText.enabled = true;
         }
 
@@ -158,7 +155,14 @@ public class GuardController : MonoBehaviour
         }
     }
 
-    public void TurnAround(int mode = 0)
+    public void TurnAround()
+    {
+        transform.Rotate(0.0f, 180.0f, 0.0f);
+        cov.Rotate(0.0f, 180.0f, 0.0f);
+        direction = -direction;
+    }
+
+    public void TurnAroundOld(int mode = 0)
     {
         if (mode == 0)
         {
