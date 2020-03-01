@@ -5,8 +5,9 @@ using UnityEngine;
 public class Hearing : MonoBehaviour
 {
     private float           distanceFromNoise;
-    private float           xDist;       // X from noise
-    private float           yDist;       // Y from noise
+    private float           xDist;       // X from player
+    private float           yDist;       // Y from player
+    public  float           sDist;       // X from noise
     public  bool            deaf;        // Can they hear in their current state
     public  bool            heard;
     private GameObject[]    target;      // What makes noises in this scene
@@ -40,8 +41,8 @@ public class Hearing : MonoBehaviour
                 if (distanceFromNoise - Mathf.Abs(soundSource.soundRadius) <= transform.lossyScale.x)
                 { // Make him alert when he hears a noise
                     sprite.color = Color.red;
+                    sDist = xDist;
                     controller.SetTargetPos(target[i].transform.position); // Stores the players position when heard
-
                     heard = true;
                 }
                 else
@@ -54,11 +55,11 @@ public class Hearing : MonoBehaviour
 
     public void FaceTheSound()
     {
-        if (xDist < 1 && controller.GetDirection() != 1)
+        if (sDist < 1 && controller.GetDirection() != 1)
         {
             controller.TurnAround();
         }
-        else if (xDist > -1 && controller.GetDirection() != -1)
+        else if (sDist > -1 && controller.GetDirection() != -1)
         {
             controller.TurnAround();
         }

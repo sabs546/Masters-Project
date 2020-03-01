@@ -174,6 +174,7 @@ public class GuardController : MonoBehaviour
                              allyController2.transform.position.y > allyController.transform.position.y)
                     { // If not then you have nobody else to contact, alert this guard
                         allyController.hearing.heard = true;
+                        allyController.hearing.sDist = hearing.sDist;
                     }
                 }
             }
