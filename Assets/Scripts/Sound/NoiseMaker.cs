@@ -35,7 +35,11 @@ public class NoiseMaker : MonoBehaviour
     {
         stepped = true;
         if (controller.landing && Mathf.Abs(controller.currentSpeed) > 1.0f && soundRadius < 10.0f)
-                soundRadius = Mathf.Abs(controller.currentSpeed / 2.5f);
+        {
+            float sound = Mathf.Abs(controller.currentSpeed) / 2.5f;
+            if (sound > soundRadius)
+                soundRadius = sound;
+        }
     }
 
     public void CallSound(uint soundID, int direction = 0)

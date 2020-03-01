@@ -131,7 +131,7 @@ public class GuardController : MonoBehaviour
 
         if (landing)
         { // If grounded
-            if (!foresight.greenShell)
+            if (!foresight.greenShell && state.currentState > 2)
             { // And capable of jumping off cliffs
                 if (hitting != 0 || !foresight.landing)
                 { // Then don't
