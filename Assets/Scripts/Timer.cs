@@ -11,21 +11,25 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeUp = false;
+        timeUp = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLimit -= Time.deltaTime;
-        if (timeLimit < 0)
+        if (!timeUp)
         {
-            timeUp = true;
+            timeLimit -= Time.deltaTime;
+            if (timeLimit < 0)
+            {
+                timeUp = true;
+            }
         }
     }
 
     public void SetLimit(float time)
     {
         timeLimit = time;
+        timeUp = false;
     }
 }

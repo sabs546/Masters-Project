@@ -43,6 +43,7 @@ public class GuardController : MonoBehaviour
         foresight = GetComponentInChildren<ForesightController>();
         state = GetComponent<OpponentState>();
         hearing = GetComponent<Hearing>();
+        timer = GetComponent<Timer>();
         direction = 1;
         alertLevel = 0;
     }
@@ -66,8 +67,8 @@ public class GuardController : MonoBehaviour
         transform.Translate(currentSpeed * Time.deltaTime, 0.0f, 0.0f);
         transform.Translate(0.0f, currentFall * Time.deltaTime, 0.0f, Space.World);
 
-        for (int i = 0; i < walls.Length; i++) // Basic collision detection, behind this point, everything thinks it's free to move anywhere
-        {
+        for (int i = 0; i < walls.Length; i++)
+        { // Basic collision detection, behind this point, everything thinks it's free to move anywhere
             if (landing && hitting != 0)
                 break;
 
@@ -76,6 +77,56 @@ public class GuardController : MonoBehaviour
 
             CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2,
                                walls[i].transform.lossyScale / 2, 0.0f, ref landing);
+        }
+
+        if (timer.timeUp)
+        {
+            if (hearing.heard)
+            { // To stop multi-state additions, only check for new sounds after 2 seconds has passed
+                timer.SetLimit(2.0f); // Start a timer for the next loop
+                hearing.FaceTheSound(); // Look at the sound
+                state.SetState(4); // Think about it
+                alertLevel++; // Be more alert because of it
+            }
+            else if (state.currentState == 4)
+            { // This should be after they hear a sound, the stun should be over, they will approach the sound at this point
+                if (alertLevel == 1 || alertLevel == 3)
+                { // They aren't very worried, it's just a noise, just patrol a bit
+                    state.SetState(3);
+                }
+
+                if (alertLevel == 2)
+                { // This is suspicious, run to the noise
+                    if (hearing.GetYDist() >= 0) // He's below you
+                        state.SetState(5);
+                    else
+                    { // He's above you
+                        state.SetState(3);
+                        ContactChain();
+                    }
+                }
+            }
+        }
+
+        if (state.currentState == 5)
+        { // If the enemy is in chase mode
+            if (!foresight.landing)
+            { // If they find a fall
+                state.SetState(4); // Peer over the edge
+                timer.SetLimit(2.0f); // Peer over for 2 seconds
+                foresight.greenShell = true; // Afterwards, go to state 3 to walk off
+                alertLevel = 3; // Special alertLevel for walking off cliffs
+            }
+        }
+        else if (state.currentState == 3)
+        { // If the enemy is walking off a cliff, don't walk off of any more cliffs
+            if (foresight.greenShell && !landing)
+                foresight.greenShell = false;
+            else if (!foresight.greenShell && landing && alertLevel == 3)
+            {
+                hearing.FaceTheSound();
+                alertLevel = 1;
+            }
         }
 
         if (landing)
@@ -93,66 +144,6 @@ public class GuardController : MonoBehaviour
                     TurnAround();
             }
         }
-        else
-        { // If you've fell off a cliff already, don't do it again
-            foresight.greenShell = false;
-            hearing.FaceTheSound(); // You've just jumped off to find the player, don't keep falling
-            state.SetState(3); // Walk to the sound
-            suspicionText.enabled = true;
-        }
-
-        if (state.currentState == 4)
-        {
-            if (gameObject.GetComponent<Timer>() == null)
-            {
-                gameObject.AddComponent<Timer>().SetLimit(2.0f);
-                timer = GetComponent<Timer>();
-            }
-            else
-            {
-                if (timer.timeUp)
-                {
-                    if (alertLevel < 2)
-                        alertLevel++;
-                    // Finding higher up allies to contact
-                    for (int i = 0; i < allies.Length; i++)
-                    {
-                        if (transform.position.y < targetPosition.y &&
-                            allies[i].transform.position.y > transform.position.y)
-                        {
-                            GuardController allyController = allies[i].GetComponent<GuardController>();
-                            allyController.SetTargetPos(targetPosition);
-                            if (allyController.transform.position.y > transform.position.y &&
-                                allyController.transform.position.y > targetPosition.y)
-                                allyController.Contact();
-                        }
-                    }
-
-                    switch (alertLevel)
-                    {
-                        case 1:
-                            if (state.currentState > 2)
-                                state.SetState(3);
-                            break;
-                        case 2:
-                            if (hearing.GetYDist() > 0)
-                            {
-                                if (!foresight.greenShell)
-                                    state.SetState(5);
-                                else
-                                {
-                                    if (state.currentState == 2)
-                                        foresight.greenShell = true;
-                                    state.SetState(3);
-                                    contactingText.enabled = true;
-                                }
-                            }
-                            break;
-                    }
-                    Destroy(gameObject.GetComponent<Timer>());
-                }
-            }
-        }
     }
 
     public void TurnAround()
@@ -162,65 +153,28 @@ public class GuardController : MonoBehaviour
         direction = -direction;
     }
 
-    public void TurnAroundOld(int mode = 0)
-    {
-        if (mode == 0)
-        {
-            if (state.currentState == 3)
-            {
-                transform.Rotate(0.0f, 180.0f, 0.0f);
-                cov.Rotate(0.0f, 180.0f, 0.0f);
-                direction = -direction;
-            }
-            else if (state.currentState == 5)
-            {
-                if (foresight.greenShell)
-                    state.SetState(3);
-                else
-                { // Might need to figure this out, state 4 loop, it should turn off if greenshell is on, turn greenshell on when state is 5 immediately, if above opponent
-                    if (!foresight.landing)
-                        state.SetState(4);
-                    else
-                    {
-                        state.SetState(3);
-                        suspicionText.enabled = true;
-                    }
-
-                    if (hearing.GetYDist() < 0 && alertLevel < 2)
-                        foresight.greenShell = false;
-                    else
-                        foresight.greenShell = true;
-                }
-            }
-        }
-        else if (mode == 1)
-        {
-            transform.Rotate(0.0f, 180.0f, 0.0f);
-            cov.Rotate(0.0f, 180.0f, 0.0f);
-            direction = -direction;
-            state.SetState(5);
-        }
-    }
-
-    public void Contact()
+    public void ContactChain()
     {
         for (int i = 0; i < allies.Length; i++)
         { // Check if a guard is below you who is above the noise
             GuardController allyController = allies[i].GetComponent<GuardController>();
-            if (allyController.transform.position.y < transform.position.y &&
-                allyController.transform.position.y > targetPosition.y)
-            {
-                if (state.currentState > 2)
-                    state.SetState(3);
-                contactedText.enabled = true;
-                return;
-            }
-            else
-            {
-                if (state.currentState > 2)
-                {
-                    state.SetState(4);
-                    hearing.FaceTheSound();
+            if (allyController.transform.position.y > targetPosition.y)
+            { // If they are above you
+                for (int j = i + 1; j < allies.Length; j++)
+                { // Check if someone is below the guy above
+                    GuardController allyController2 = allies[j].GetComponent<GuardController>();
+                    if (allyController.transform.position.y > allyController2.transform.position.y &&
+                        allyController2.transform.position.y > targetPosition.y)
+                    { // Check if that guy is also above the noise
+                        i = j;
+                        allyController = allies[i].GetComponent<GuardController>();
+                        continue;
+                    }
+                    else if (allyController2.transform.position.y < targetPosition.y ||
+                             allyController2.transform.position.y > allyController.transform.position.y)
+                    { // If not then you have nobody else to contact, alert this guard
+                        allyController.hearing.heard = true;
+                    }
                 }
             }
         }

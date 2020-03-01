@@ -8,6 +8,7 @@ public class Hearing : MonoBehaviour
     private float           xDist;       // X from noise
     private float           yDist;       // Y from noise
     public  bool            deaf;        // Can they hear in their current state
+    public  bool            heard;
     private GameObject[]    target;      // What makes noises in this scene
     private NoiseMaker      soundSource; // What is making the noise
     private OpponentState   state;       // State script for the guard, for when they hear something
@@ -26,6 +27,7 @@ public class Hearing : MonoBehaviour
     void Update()
     { /// NEXT TIME HE NEEDS TO MOVE CLOSER TO THE NOISE, NOT JUST THE OTHER SIDE OF THE PLATFORM
         target = GameObject.FindGameObjectsWithTag("NoiseMaker");
+        heard = false;
         for (int i = 0; i < target.Length; i++)
         {
             soundSource = target[i].GetComponentInParent<NoiseMaker>();
@@ -40,12 +42,7 @@ public class Hearing : MonoBehaviour
                     sprite.color = Color.red;
                     controller.SetTargetPos(target[i].transform.position); // Stores the players position when heard
 
-                    state.SetState(4);
-                    FaceTheSound();
-                    if (yDist > 0 && controller.alertLevel == 2)
-                    { // Let him fall off cliffs if he's above the sound and been bothered before
-                        GetComponent<ForesightController>().greenShell = true;
-                    }
+                    heard = true;
                 }
                 else
                 {
