@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FlyController.cs" />
     <Compile Include="Assets\Scripts\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Buttons\BaseButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonTrigger.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Scripts\Movement\Enemies\States\DownState.cs" />
     <Compile Include="Assets\Scripts\Movement\Enemies\States\GuardState.cs" />
     <Compile Include="Assets\Scripts\Movement\Enemies\States\PatrolState.cs" />
+    <Compile Include="Assets\Scripts\Movement\FlyController.cs" />
     <Compile Include="Assets\Scripts\Movement\GenericCollider.cs" />
     <Compile Include="Assets\Scripts\Movement\Letterboxing.cs" />
     <Compile Include="Assets\Scripts\Movement\WallSetup.cs" />
