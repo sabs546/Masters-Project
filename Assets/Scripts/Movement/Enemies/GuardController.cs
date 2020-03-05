@@ -11,9 +11,9 @@ public class GuardController : MonoBehaviour
     public  float        gravity;          // Object fall rate
     public  float        terminalV;        // Max falling speed
     public  float        topSpeed;         // Maximum speed of the object
-    public  Canvas       suspicionText;    // Text shown when they hear something
-    public  Canvas       contactingText;   // Text shown when they talk to someone else
-    public  Canvas       contactedText;    // Text shown when someone tells them something
+    public  GameObject   suspicionText;    // Text shown when they hear something
+    public  GameObject   contactingText;   // Text shown when they talk to someone else
+    public  GameObject   contactedText;    // Text shown when someone tells them something
     
     private float        currentSpeed;     // Speed the object is running at
     private float        currentFall;      // Speed the object is falling at
@@ -21,7 +21,7 @@ public class GuardController : MonoBehaviour
     // Hit checks -------
     private bool         landing;          // Is it hitting a floor
     private int          hitting;          // -1/0/1 | Is it hitting a wall
-    private int          direction;        // -1/+1  | Which way is he facing
+    public  int          direction;        // -1/+1  | Which way is he facing
     public  int          alertLevel;       // The higher this gets, the more thorough they are
     private Vector3      targetPosition;   // Position of player, if he hears it
 
@@ -44,7 +44,12 @@ public class GuardController : MonoBehaviour
         state = GetComponent<OpponentState>();
         hearing = GetComponent<Hearing>();
         timer = GetComponent<Timer>();
-        direction = 1;
+        if (direction == -1)
+        {
+            transform.Rotate(0.0f, 180.0f, 0.0f);
+            cov.Rotate(0.0f, 180.0f, 0.0f);
+            suspicionText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
+        }
         alertLevel = 0;
     }
 
@@ -151,6 +156,7 @@ public class GuardController : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
         cov.Rotate(0.0f, 180.0f, 0.0f);
         direction = -direction;
+        suspicionText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
     }
 
     public void ContactChain()

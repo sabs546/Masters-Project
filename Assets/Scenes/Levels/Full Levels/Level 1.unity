@@ -5708,6 +5708,126 @@ PrefabInstance:
       propertyPath: m_Text
       value: I can't reach this sound, can someone check this out?
       objectReference: {fileID: 0}
+    - target: {fileID: 6358726437779728447, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230982791797079508, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845601492482962109, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: I think I heard someone... I guess... I should check this out...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098307665206836297, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971701113317836424, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: I can't reach this sound, can someone check this out?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915090665465901850, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997314184242809003, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: I'll hop down but I don't know if I'll find anything
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
 --- !u!1 &494323398
@@ -9561,6 +9681,127 @@ PrefabInstance:
       value: 'Hey I think there''s someone here, I can''t get to them
 
         Can anyone check it out?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358726437779728447, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230982791797079508, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845601492482962109, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: What was that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098307665206836297, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971701113317836424, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Hey I think I hear someone above me, sorry is anyone nearby to check
+        it out?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915090665465901850, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997314184242809003, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Out of my reach, sorry
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
@@ -20394,26 +20635,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
@@ -20455,7 +20676,12 @@ PrefabInstance:
     - target: {fileID: 5504347346882700857, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.007
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504347346882700857, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2991384894656219727, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
@@ -20466,6 +20692,136 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: direction
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723754565017341246, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358726437779728447, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230982791797079508, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845601492482962109, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Someone is down there...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098307665206836297, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971701113317836424, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: I need someone to check this out
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315913857032311142, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915090665465901850, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997314184242809003, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Gimme a sec, I'll figure out what's going on
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677978157730465024, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
