@@ -82,14 +82,14 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
             Camera camera = GetComponent<Camera>();
-            BackgroundManager bg = GameObject.Find("Background").GetComponent<BackgroundManager>();
+            ParallaxBackground bg = GetComponentInChildren<ParallaxBackground>();
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 if (camera.orthographicSize < 20.0f)
                 {
                     camera.orthographicSize += 10.0f * Time.deltaTime;
-                    bg.ResizeBG(4.0f);
+                    bg.ResizeBG(0.1f);
                 }
                 else if (camera.orthographicSize > 20.0f)
                     camera.orthographicSize = 20.0f;
@@ -99,7 +99,7 @@ public class CameraFollow : MonoBehaviour
                 if (camera.orthographicSize > 10.0f)
                 {
                     camera.orthographicSize -= 10.0f * Time.deltaTime;
-                    bg.ResizeBG(-4.0f);
+                    bg.ResizeBG(-0.1f);
                 }
                 else if (camera.orthographicSize < 10.0f)
                     camera.orthographicSize = 10.0f;
