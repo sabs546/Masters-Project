@@ -20,15 +20,15 @@ public class ParallaxBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < stable.Length; i++)
+        for (int i = 1; i < stable.Length; i++)
         {
             stable[i].transform.position = camera.transform.position + transform.localPosition;
         }
         int j = parallax.Length;
-        for (int i = 0; i < parallax.Length; i++)
+        for (int i = 1; i < parallax.Length; i++)
         {
-            parallax[i].transform.position = new Vector3((transform.position.x - (camera.transform.position.x / j) + cameraScale),
-                                                         (transform.position.y - (camera.transform.position.y / j) + cameraScale));
+            parallax[i].transform.position = new Vector3((transform.position.x - (camera.transform.position.x / j)) + cameraScale,
+                                                         (transform.position.y - (camera.transform.position.y / j)) + cameraScale);
             j--;
         }
     }
