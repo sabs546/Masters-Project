@@ -9,7 +9,8 @@ public class Hearing : MonoBehaviour
     private float           yDist;       // Y from player
     public  float           sDist;       // X from noise
     public  bool            deaf;        // Can they hear in their current state
-    public  bool            heard;
+    public  bool            heard;       // Has he heard a noise
+    public  bool            contacted;   // Did he hear through contact
     private GameObject[]    target;      // What makes noises in this scene
     private NoiseMaker      soundSource; // What is making the noise
     private OpponentState   state;       // State script for the guard, for when they hear something
@@ -22,13 +23,14 @@ public class Hearing : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         state = GetComponent<OpponentState>();
         controller = GetComponent<GuardController>();
+        heard = false;
+        contacted = false;
     }
 
     // Update is called once per frame
     void Update()
     { /// NEXT TIME HE NEEDS TO MOVE CLOSER TO THE NOISE, NOT JUST THE OTHER SIDE OF THE PLATFORM
         target = GameObject.FindGameObjectsWithTag("NoiseMaker");
-        heard = false;
         for (int i = 0; i < target.Length; i++)
         {
             soundSource = target[i].GetComponentInParent<NoiseMaker>();
@@ -47,7 +49,11 @@ public class Hearing : MonoBehaviour
                 }
                 else
                 {
-                    sprite.color = Color.black;
+                    if (!contacted)
+                    {
+                        sprite.color = Color.black;
+                        heard = false;
+                    }
                 }
             }
         }

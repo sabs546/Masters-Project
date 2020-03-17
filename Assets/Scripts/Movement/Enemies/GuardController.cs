@@ -92,6 +92,7 @@ public class GuardController : MonoBehaviour
                 hearing.FaceTheSound(); // Look at the sound
                 state.SetState(4); // Think about it
                 alertLevel++; // Be more alert because of it
+                hearing.contacted = false;
             }
             else if (state.currentState == 4)
             { // This should be after they hear a sound, the stun should be over, they will approach the sound at this point
@@ -180,9 +181,14 @@ public class GuardController : MonoBehaviour
                              allyController2.transform.position.y > allyController.transform.position.y)
                     { // If not then you have nobody else to contact, alert this guard
                         allyController.hearing.heard = true;
-                        allyController.hearing.sDist = hearing.sDist;
+                        allyController.hearing.contacted = true;
+                        allyController.hearing.sDist = allyController.hearing.sDist;
+                        return;
                     }
                 }
+                allyController.hearing.heard = true;
+                allyController.hearing.contacted = true;
+                allyController.hearing.sDist = allyController.hearing.sDist;
             }
         }
     }
