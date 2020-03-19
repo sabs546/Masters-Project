@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6960038033253985879, guid: 7881b7b181d05f046ade05a984e851b7,
         type: 3}
       propertyPath: m_Name
-      value: FloorGrippy Variant
+      value: FloorGrippy
       objectReference: {fileID: 0}
     - target: {fileID: 6960038033253985882, guid: 7881b7b181d05f046ade05a984e851b7,
         type: 3}
