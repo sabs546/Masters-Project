@@ -34,16 +34,16 @@ public class CameraFollow : MonoBehaviour
             if (next != trGoal.Length)
             {
                 if (transform.position.x < trGoal[next].position.x - 0.1f)
-                    speed.x = 20.0f;
+                    speed.x = 500.0f * Time.deltaTime;
                 else if (transform.position.x > trGoal[next].position.x + 0.1f)
-                    speed.x = -20.0f;
+                    speed.x = -500.0f * Time.deltaTime;
                 else
                     speed.x = 0.0f;
 
-                if (transform.position.x < trGoal[next].position.y - 0.1f)
-                    speed.y = 20.0f;
+                if (transform.position.y < trGoal[next].position.y - 0.1f)
+                    speed.y = 500.0f * Time.deltaTime;
                 else if (transform.position.y > trGoal[next].position.y + 0.1f)
-                    speed.y = -20.0f;
+                    speed.y = -500.0f * Time.deltaTime;
                 else
                     speed.y = 0.0f;
 
@@ -56,16 +56,16 @@ public class CameraFollow : MonoBehaviour
             else
             {
                 if (transform.position.x < player.transform.position.x - 0.1f)
-                    speed.x = 10.0f;
+                    speed.x = 500.0f * Time.deltaTime;
                 else if (transform.position.x > player.transform.position.x + 0.1f)
-                    speed.x = -10.0f;
+                    speed.x = -500.0f * Time.deltaTime;
                 else
                     speed.x = 0.0f;
 
                 if (transform.position.y < player.transform.position.y - 0.1f)
-                    speed.y = 10.0f;
+                    speed.y = 500.0f * Time.deltaTime;
                 else if (transform.position.y > player.transform.position.y + 0.1f)
-                    speed.y = -10.0f;
+                    speed.y = -500.0f * Time.deltaTime;
                 else
                     speed.y = 0.0f;
 

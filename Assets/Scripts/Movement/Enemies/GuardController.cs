@@ -182,13 +182,11 @@ public class GuardController : MonoBehaviour
                     { // If not then you have nobody else to contact, alert this guard
                         allyController.hearing.heard = true;
                         allyController.hearing.contacted = true;
-                        allyController.hearing.sDist = allyController.hearing.sDist;
                         return;
                     }
                 }
                 allyController.hearing.heard = true;
                 allyController.hearing.contacted = true;
-                allyController.hearing.sDist = allyController.hearing.sDist;
             }
         }
     }

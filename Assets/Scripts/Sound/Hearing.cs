@@ -54,6 +54,10 @@ public class Hearing : MonoBehaviour
                         sprite.color = Color.black;
                         heard = false;
                     }
+                    else
+                    {
+                        sDist = xDist;
+                    }
                 }
             }
         }
