@@ -88,6 +88,7 @@ public class GuardController : MonoBehaviour
 
         if (timer.timeUp)
         {
+            contactingText.SetActive(false);
             if (hearing.heard)
             { // To stop multi-state additions, only check for new sounds after 2 seconds has passed
                 timer.SetLimit(2.0f); // Start a timer for the next loop
@@ -101,8 +102,6 @@ public class GuardController : MonoBehaviour
                 if (alertLevel == 1 || alertLevel == 3)
                 { // They aren't very worried, it's just a noise, just patrol a bit
                     state.SetState(3);
-                    cf.alerted = false;
-                    contactedText.SetActive(false);
                 }
 
                 if (alertLevel == 2)
@@ -120,6 +119,8 @@ public class GuardController : MonoBehaviour
 
         if (state.currentState == 5)
         { // If the enemy is in chase mode
+            cf.alerted = false;
+            contactedText.SetActive(false);
             if (!foresight.landing)
             { // If they find a fall
                 state.SetState(4); // Peer over the edge
@@ -188,6 +189,7 @@ public class GuardController : MonoBehaviour
                     { // If not then you have nobody else to contact, alert this guard
                         allyController.hearing.heard = true;
                         allyController.hearing.contacted = true;
+                        contactingText.SetActive(true);
                         allyController.contactedText.SetActive(true);
                         allyController.alertLevel++;
                         cf.snapPos = allyController.transform.position;
@@ -197,6 +199,7 @@ public class GuardController : MonoBehaviour
                 }
                 allyController.hearing.heard = true;
                 allyController.hearing.contacted = true;
+                contactingText.SetActive(true);
                 allyController.contactedText.SetActive(true);
                 if (allyController.alertLevel == 1)
                 allyController.alertLevel++;
