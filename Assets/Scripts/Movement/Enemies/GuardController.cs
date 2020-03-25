@@ -34,12 +34,14 @@ public class GuardController : MonoBehaviour
     private Hearing             hearing;   // To drop to lower platforms
     private GameObject[]        allies;    // To alert higher guards
     public  Transform           cov;       // Visual vision cone
+    private CameraFollow        cf;        // For when guards are alerted
 
     // Start is called before the first frame update
     void Start()
     {
         walls = GameObject.FindGameObjectsWithTag("Wall");
         allies = GameObject.FindGameObjectsWithTag("Guard");
+        cf = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
         foresight = GetComponentInChildren<ForesightController>();
         state = GetComponent<OpponentState>();
         hearing = GetComponent<Hearing>();
@@ -99,6 +101,8 @@ public class GuardController : MonoBehaviour
                 if (alertLevel == 1 || alertLevel == 3)
                 { // They aren't very worried, it's just a noise, just patrol a bit
                     state.SetState(3);
+                    cf.alerted = false;
+                    contactedText.SetActive(false);
                 }
 
                 if (alertLevel == 2)
@@ -158,6 +162,8 @@ public class GuardController : MonoBehaviour
         cov.Rotate(0.0f, 180.0f, 0.0f);
         direction = -direction;
         suspicionText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
+        contactingText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
+        contactedText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
     }
 
     public void ContactChain()
@@ -182,11 +188,20 @@ public class GuardController : MonoBehaviour
                     { // If not then you have nobody else to contact, alert this guard
                         allyController.hearing.heard = true;
                         allyController.hearing.contacted = true;
+                        allyController.contactedText.SetActive(true);
+                        allyController.alertLevel++;
+                        cf.snapPos = allyController.transform.position;
+                        cf.alerted = true;
                         return;
                     }
                 }
                 allyController.hearing.heard = true;
                 allyController.hearing.contacted = true;
+                allyController.contactedText.SetActive(true);
+                if (allyController.alertLevel == 1)
+                allyController.alertLevel++;
+                cf.snapPos = allyController.transform.position;
+                cf.alerted = true;
             }
         }
     }

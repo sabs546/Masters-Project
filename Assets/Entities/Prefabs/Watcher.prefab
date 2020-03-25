@@ -127,6 +127,7 @@ MonoBehaviour:
   sDist: 0
   deaf: 0
   heard: 0
+  contacted: 0
 --- !u!114 &5746072628373088396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.497, g: 0.18720333, b: 0.12524399, a: 1}
+  m_fontColor: {r: 1, g: 0.3779528, b: 0.25196856, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -580,7 +581,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.497, g: 0.18720333, b: 0.12524399, a: 1}
+  m_fontColor: {r: 1, g: 0.3779528, b: 0.25196856, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -925,7 +926,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.497, g: 0.18720333, b: 0.12524399, a: 1}
+  m_fontColor: {r: 1, g: 0.3779528, b: 0.25196856, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

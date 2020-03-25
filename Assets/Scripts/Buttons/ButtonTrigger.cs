@@ -7,6 +7,7 @@ public class ButtonTrigger : MonoBehaviour
     private int currentState;
     private GameObject player;
     public int buttonType;
+    public bool startup;
     GameObject[] guards;
     private Timer timer;
     // Start is called before the first frame update
@@ -15,7 +16,15 @@ public class ButtonTrigger : MonoBehaviour
         currentState = 2;
         player = GameObject.FindGameObjectWithTag("Player");
         guards = GameObject.FindGameObjectsWithTag("Guard");
-        timer = null;
+        if (!startup)
+            timer = null;
+        else
+        {
+            if (GetComponent<QuickInfo>() != null)
+                GetComponent<QuickInfo>().triggered = true;
+            gameObject.AddComponent<Timer>().SetLimit(5.0f);
+            timer = GetComponent<Timer>();
+        }
     }
 
     // Update is called once per frame
