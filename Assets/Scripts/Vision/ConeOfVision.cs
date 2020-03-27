@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConeOfVision : MonoBehaviour
 {
@@ -112,6 +113,7 @@ public class ConeOfVision : MonoBehaviour
                 {
                     playerInSight = true;
                     Debug.Log("We been spooted");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     // The game should just restart here
                 }
             }
