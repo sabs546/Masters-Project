@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ConeOfVision : MonoBehaviour
 {
@@ -33,13 +32,13 @@ public class ConeOfVision : MonoBehaviour
 
     private void Update()
     {
-        FindVisibleTargets();
-        float angle = viewAngle / 2;
+        FindVisibleTargets(); // Does what it says on the tin
+        float angle = viewAngle / 2; // This should match up with function above
         Vector3 origin = Vector3.zero;
-        int rayCount = 300;
-        float angleIncrease = viewAngle / rayCount;
+        int rayCount = 300; // Looks smoother
+        float angleIncrease = viewAngle / rayCount; // Where to start the next triangle
 
-        Vector3[] vertices = new Vector3[rayCount + 1 + 1];
+        Vector3[] vertices = new Vector3[rayCount + 1 + 1]; // Extras for the edges
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
@@ -52,11 +51,11 @@ public class ConeOfVision : MonoBehaviour
             Vector3 vertex;
             RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, GetVectorFromAngle(angle) * controller.GetDirection(), viewRadius);
             if (raycastHit2D.collider == null)
-            {
+            { // If it doesn't hit an object cast the full ray
                 vertex = origin + (GetVectorFromAngle(angle) * controller.GetDirection()) * viewRadius;
             }
             else
-            {
+            { // Otherwise, cut it short
                 vertex = origin + (GetVectorFromAngle(angle) * controller.GetDirection()) * raycastHit2D.distance;
             }
             vertices[vertexIndex] = vertex;
@@ -113,7 +112,8 @@ public class ConeOfVision : MonoBehaviour
                 {
                     playerInSight = true;
                     Debug.Log("We been spooted");
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    GameObject.Find("Main Camera").GetComponentInChildren<DeathTransition>().enabled = true;
+                    GameObject.Find("Main Camera").GetComponentInChildren<Letterboxing>().enabled = false;
                     // The game should just restart here
                 }
             }

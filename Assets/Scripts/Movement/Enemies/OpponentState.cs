@@ -9,7 +9,6 @@ public class OpponentState : MonoBehaviour
     private GuardController    controller;   // Movement speed
     private BaseState          state;
     private Hearing            hearing;
-    //private OpponentController noiseSense;   // How much sound does he make
 
     private void Start()
     {

@@ -33,9 +33,9 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         if (!begin)
-        {
+        { // If the character can't move yet
             if (next != trGoal.Length)
-            {
+            { // Pan the camera across the goals of the stage
                 if (transform.position.x < trGoal[next].position.x - 0.2f)
                     speed.x = 1000.0f * Time.deltaTime;
                 else if (transform.position.x > trGoal[next].position.x + 0.2f)
@@ -43,6 +43,7 @@ public class CameraFollow : MonoBehaviour
                 else
                     speed.x = 0.0f;
 
+                // Same but for the Y-Axis
                 if (transform.position.y < trGoal[next].position.y - 0.2f)
                     speed.y = 1000.0f * Time.deltaTime;
                 else if (transform.position.y > trGoal[next].position.y + 0.2f)
@@ -52,12 +53,13 @@ public class CameraFollow : MonoBehaviour
 
                 transform.Translate(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
+                // Change the goal when it's got to it so it can move to the next checkpoint
                 if (transform.position.x < trGoal[next].position.x + 0.2f && transform.position.x > trGoal[next].position.x - 0.2f &&
                     transform.position.y < trGoal[next].position.y + 0.2f && transform.position.y > trGoal[next].position.y - 0.2f)
                     next++;
             }
             else
-            {
+            { // When the goals are all shown, go to the player with the same method as before
                 if (transform.position.x < player.transform.position.x - 0.2f)
                     speed.x = 1000.0f * Time.deltaTime;
                 else if (transform.position.x > player.transform.position.x + 0.2f)
@@ -82,9 +84,9 @@ public class CameraFollow : MonoBehaviour
             }
         }
         else
-        {
+        { // When the game has begun it starts to latch onto the player
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-            if (alerted)
+            if (alerted) // When a guard is alerted it should quickly show who was alerted
                 transform.position = new Vector3(snapPos.x, snapPos.y, transform.position.z);
             Camera camera = GetComponent<Camera>();
             ParallaxBackground bg = GetComponentInChildren<ParallaxBackground>();

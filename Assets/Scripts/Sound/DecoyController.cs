@@ -29,9 +29,9 @@ public class DecoyController : MonoBehaviour
     void FixedUpdate()
     {
         if (!timer.timeUp)
-        {
+        { // The decoy can't fire off forever, it should just explode after a bit
             if (speed.y < 0.0f && gravity < resetGravity * 1.01f)
-                gravity *= 1.01f;
+                gravity *= 1.01f; // It should fall with weight, just like the player
             else if (gravity > resetGravity * 0.4f)
                 gravity *= 0.95f;
 
@@ -48,12 +48,12 @@ public class DecoyController : MonoBehaviour
         }
 
         if (timer.timeUp && !used)
-        {
+        { // For when you want a noisemaker limit
             noiseMaker.MakeNoise((speed.x + speed.y) / 2);
             used = true;
         }
         if (noiseMaker.soundRadius <= 0.0f && used)
-        {
+        { // It's stopped making noise, destroy it
             Destroy(this.gameObject);
         }
     }

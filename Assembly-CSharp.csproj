@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Info.cs" />
     <Compile Include="Assets\Scripts\Movement\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Movement\Controller.cs" />
+    <Compile Include="Assets\Scripts\Movement\DeathTransition.cs" />
     <Compile Include="Assets\Scripts\Movement\Enemies\ForesightController.cs" />
     <Compile Include="Assets\Scripts\Movement\Enemies\GuardController.cs" />
     <Compile Include="Assets\Scripts\Movement\Enemies\OpponentState.cs" />

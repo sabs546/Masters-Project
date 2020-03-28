@@ -22,12 +22,12 @@ public class StepTimer : MonoBehaviour
     void Update()
     {
         if (moving && active)
-        {
+        { // Make step noises while you're moving
             timeLimit -= Time.deltaTime;
             if (timeLimit <= 0.0f)
-            {
-                sfx.AddSound();
-                stepSound[Random.Range(0, stepSound.Length)].Play();
+            { // The steps should come out in waves
+                sfx.AddSound(); // The noise the player makes comes from those sounds
+                stepSound[Random.Range(0, stepSound.Length)].Play(); // They can get repetitive, use multiple
                 active = false;
             }
         }

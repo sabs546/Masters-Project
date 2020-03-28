@@ -48,14 +48,14 @@ public class Hearing : MonoBehaviour
                     heard = true;
                 }
                 else
-                {
+                { // Otherwise he probably didn't hear anything...
                     if (!contacted)
-                    {
+                    { // So you can colour him black...
                         sprite.color = Color.black;
                         heard = false;
                     }
                     else
-                    {
+                    { // Unless of course he was contacted by someone to hear something
                         sDist = xDist;
                     }
                 }
@@ -64,7 +64,7 @@ public class Hearing : MonoBehaviour
     }
 
     public void FaceTheSound()
-    {
+    { // Turn to face the direction the noise came from
         if (sDist < 1 && controller.GetDirection() != 1)
         {
             controller.TurnAround();

@@ -21,12 +21,12 @@ public class ParallaxBackground : MonoBehaviour
     void Update()
     {
         for (int i = 1; i < stable.Length; i++)
-        {
+        { // For layers that may not need to move
             stable[i].transform.position = camera.transform.position + transform.localPosition;
         }
         int j = parallax.Length;
         for (int i = 1; i < parallax.Length; i++)
-        {
+        { // Most of the layers, these all have parallax
             parallax[i].transform.position = new Vector3((transform.position.x - (camera.transform.position.x / j)) + cameraScale,
                                                          (transform.position.y - (camera.transform.position.y / j)) + cameraScale);
             j--;

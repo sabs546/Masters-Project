@@ -60,13 +60,13 @@ public class Controller : MonoBehaviour
         if (camera.begin)
         {
             if (currentFall < 0.0f && gravity < resetGravity * 1.1f)
-                gravity *= 1.1f;
+                gravity *= 1.1f; // These lines here make falling more realistic
             else if (Input.GetKey(KeyCode.W) && gravity > resetGravity * 0.4f)
                 gravity *= 0.9f;
 
-            currentFall -= gravity * Time.deltaTime;
-            bool crashLand = landing;
-            landing = false;
+            currentFall -= gravity * Time.deltaTime; // Fall
+            bool crashLand = landing; // Make a louder noise when you hit the ground
+            landing = false; // Used for ground collision
             hitting = 0;
 
             if (hitting > -1)
@@ -117,7 +117,7 @@ public class Controller : MonoBehaviour
                 float tempFall = currentFall;
                 CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2, walls[i].transform.lossyScale / 2, i, oldPos);
                 if (!crashLand && landing)
-                {
+                { // If you didn't make a hard fall, use the normal sound
                     sfx.MakeNoise(tempFall / 5);
                     AudioSource sound = gameObject.transform.Find("Landing sound").GetComponent<AudioSource>();
                     if (tempFall < -50)
@@ -143,15 +143,15 @@ public class Controller : MonoBehaviour
                         currentSpeed = -topSpeed;
 
                     if (sfx.enabled)
-                    {
-                        sfx.MakeNoise(10.0f);
+                    { // Jump sound
+                        sfx.MakeNoise(10.0f); // Sound circle
                         sfx.CallSound(1, hitting);
                     }
                 }
             }
 
             if (Input.GetKey(KeyCode.W) && landing)
-            {
+            { // Normal jump, only works when you're on the floor
                 if (Mathf.Abs(currentSpeed) >= topSpeed)
                     launchPwr *= 1.25f;
 
@@ -168,7 +168,7 @@ public class Controller : MonoBehaviour
             }
 
             if (landing)
-            {
+            { // Some stuff needs to reset when you hit the floor
                 gravity = resetGravity;
                 if (Mathf.Abs(currentSpeed) > 2.0f)
                     GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
@@ -177,7 +177,7 @@ public class Controller : MonoBehaviour
             }
 
             if (Input.GetKey(KeyCode.E) && newDecoy == null)
-            {
+            { // Decoy throwing
                 newDecoy = Instantiate(decoy, transform.position, transform.rotation);
                 newDecoy.AddComponent<Timer>().SetLimit(10.0f);
                 if (Input.GetKey(KeyCode.W))

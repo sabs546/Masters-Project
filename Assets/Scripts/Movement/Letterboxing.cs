@@ -15,7 +15,7 @@ public class Letterboxing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     { // When the letterbox appears you're at max speed
         if (Mathf.Abs(controller.currentSpeed) >= controller.topSpeed && boxes[0].rectTransform.anchoredPosition.y > 50.0f)
         { // If box isn't at the limit
