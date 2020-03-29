@@ -39,6 +39,10 @@ public class ButtonTrigger : MonoBehaviour
     {
         switch (type)
         {
+            case -2: // Kill
+                GameObject.Find("Main Camera").GetComponentInChildren<DeathTransition>().enabled = true;
+                GameObject.Find("Main Camera").GetComponentInChildren<Letterboxing>().enabled = false;
+                break;
             case -1:
                 // Base button
                 break;
@@ -50,7 +54,7 @@ public class ButtonTrigger : MonoBehaviour
                 BaseButton panic = new PanicButton();
                 panic.Trigger(transform);
                 break;
-            case 999: // Empty
+            case 2: // Empty
                 BaseButton empty = new Empty();
                 empty.Trigger(transform);
                 break;

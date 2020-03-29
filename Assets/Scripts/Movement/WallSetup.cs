@@ -35,7 +35,7 @@ public class WallSetup : MonoBehaviour
             case 1: // Rough
                 grip = 10.0f;
                 break;
-            case 2:
+            case 2: // Silence
                 grip = 1.0f;
                 if (player.GetComponent<NoiseMaker>().enabled == true)
                     player.GetComponent<NoiseMaker>().enabled = false;
