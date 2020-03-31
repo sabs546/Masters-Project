@@ -8,6 +8,7 @@ public class ButtonTrigger : MonoBehaviour
     private GameObject player;
     public int buttonType;
     public bool startup;
+    public bool door;
     GameObject[] guards;
     private Timer timer;
     // Start is called before the first frame update
@@ -40,8 +41,11 @@ public class ButtonTrigger : MonoBehaviour
         switch (type)
         {
             case -2: // Kill
-                GameObject.Find("Main Camera").GetComponentInChildren<DeathTransition>().enabled = true;
-                GameObject.Find("Main Camera").GetComponentInChildren<Letterboxing>().enabled = false;
+                GameObject DT = GameObject.Find("Main Camera");
+                DT.GetComponentInChildren<DeathTransition>().enabled = true;
+                if (GetComponent<Door>() != null)
+                    DT.GetComponentInChildren<DeathTransition>().door = true;
+                DT.GetComponentInChildren<Letterboxing>().enabled = false;
                 break;
             case -1:
                 // Base button
@@ -57,9 +61,6 @@ public class ButtonTrigger : MonoBehaviour
             case 2: // Empty
                 BaseButton empty = new Empty();
                 empty.Trigger(transform);
-                break;
-            case 3:
-                GetComponent<Door>().enabled = true;
                 break;
         }
     }

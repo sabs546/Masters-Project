@@ -19,6 +19,6 @@ public class Door : MonoBehaviour
 
     private void LoadNextLevel(string scene)
     {
-        SceneManager.LoadSceneAsync(scene);
+        SceneManager.LoadScene(scene);
     }
 }
