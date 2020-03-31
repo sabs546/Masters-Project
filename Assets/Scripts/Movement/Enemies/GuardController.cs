@@ -52,7 +52,6 @@ public class GuardController : MonoBehaviour
             cov.Rotate(0.0f, 180.0f, 0.0f);
             suspicionText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
         }
-        alertLevel = 0;
     }
 
     // Update is called once per frame

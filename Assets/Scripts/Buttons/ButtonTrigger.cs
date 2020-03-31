@@ -58,6 +58,9 @@ public class ButtonTrigger : MonoBehaviour
                 BaseButton empty = new Empty();
                 empty.Trigger(transform);
                 break;
+            case 3:
+                GetComponent<Door>().enabled = true;
+                break;
         }
     }
 
