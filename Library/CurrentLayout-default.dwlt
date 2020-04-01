@@ -43,10 +43,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 711, y: 394}
-  m_MaxSize: {x: 18006, y: 14044}
+  m_MinSize: {x: 709, y: 394}
+  m_MaxSize: {x: 18004, y: 14044}
   vertical: 1
-  controlID: 164
+  controlID: 142
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 394}
   m_MaxSize: {x: 10004, y: 14044}
   vertical: 1
-  controlID: 19
+  controlID: 67
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,10 +189,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 711, y: 394}
-  m_MaxSize: {x: 18006, y: 14044}
+  m_MinSize: {x: 709, y: 394}
+  m_MaxSize: {x: 18004, y: 14044}
   vertical: 0
-  controlID: 165
+  controlID: 143
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 344
     height: 947
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -339,9 +339,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 24.722345, y: 6.965351, z: -4.547994}
+    m_Target: {x: 9.532633, y: 3.7844615, z: -433.57373}
     speed: 2
-    m_Value: {x: 24.722345, y: 6.965351, z: -4.547994}
+    m_Value: {x: 9.532633, y: 3.7844615, z: -433.57373}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -374,9 +374,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 62.118267
+    m_Target: 32.49673
     speed: 2
-    m_Value: 62.118267
+    m_Value: 32.49673
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -514,7 +514,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: eefbfeff942cffffa62cffff0c2dffffee30ffff6a52ffffd052ffff8a63ffff7e64ffffb668ffff1888ffff38c8ffffc2c9ffff12ccffff1ef5ffff1af6ffff46f6ffff6afbffff
+      m_ExpandedIDs: 04fbffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -603,20 +603,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Entities/Prefabs
+    - Assets/Entities/Sprites/Decor
   m_ViewMode: 1
   m_StartGridSize: 69
   m_LastFolders:
-  - Assets/Entities/Prefabs
+  - Assets/Entities/Sprites/Decor
   m_LastFoldersGridSize: 69
   m_LastProjectPath: C:\Users\Saber\Desktop\Masters-Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 83}
-    m_SelectedIDs: d62f0000
-    m_LastClickedID: 12246
-    m_ExpandedIDs: 00000000be2d00005a2f0000622f0000b82f0000d62f0000323000003e30000000ca9a3b
+    m_SelectedIDs: c2320000
+    m_LastClickedID: 12994
+    m_ExpandedIDs: 00000000be2d0000682f0000ca2f0000e82f000048300000543000007231000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -644,7 +644,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000be2d00005a2f0000b82f0000323000003e300000
+    m_ExpandedIDs: 00000000be2d0000682f0000ca2f00004830000054300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
