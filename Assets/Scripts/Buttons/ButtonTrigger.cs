@@ -44,7 +44,7 @@ public class ButtonTrigger : MonoBehaviour
                 GameObject DT = GameObject.Find("Main Camera");
                 DT.GetComponentInChildren<DeathTransition>().enabled = true;
                 if (GetComponent<Door>() != null)
-                    DT.GetComponentInChildren<DeathTransition>().door = true;
+                    DT.GetComponentInChildren<DeathTransition>().door = gameObject;
                 DT.GetComponentInChildren<Letterboxing>().enabled = false;
                 break;
             case -1:

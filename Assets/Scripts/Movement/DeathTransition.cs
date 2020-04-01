@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DeathTransition : MonoBehaviour
 {
     Image[] boxes;
-    public bool door = false;
+    public GameObject door;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +24,10 @@ public class DeathTransition : MonoBehaviour
         }
         else
         { // When the boxes shut, reset the game
-            if (!door)
+            if (door == null)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             else
-                GameObject.Find("Door").GetComponent<Door>().enabled = true;
+                door.GetComponent<Door>().enabled = true;
         }
     }
 }
