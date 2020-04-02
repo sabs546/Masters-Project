@@ -51,6 +51,8 @@ public class GuardController : MonoBehaviour
             transform.Rotate(0.0f, 180.0f, 0.0f);
             cov.Rotate(0.0f, 180.0f, 0.0f);
             suspicionText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
+            contactingText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
+            contactedText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
         }
     }
 
@@ -190,7 +192,8 @@ public class GuardController : MonoBehaviour
                         allyController.hearing.contacted = true; // But don't reset the hearing value just yet
                         contactingText.SetActive(true); // Start the text bubble
                         allyController.contactedText.SetActive(true); // Start the contacts text bubble
-                        allyController.alertLevel++; // Make him a little more alert because he needs to check for the sound
+                        if (allyController.alertLevel < 2)
+                            allyController.alertLevel++; // Make him a little more alert because he needs to check for the sound
                         cf.snapPos = allyController.transform.position;
                         cf.alerted = true;
                         return;
@@ -201,7 +204,7 @@ public class GuardController : MonoBehaviour
                 contactingText.SetActive(true);
                 allyController.contactedText.SetActive(true);
                 if (allyController.alertLevel == 1)
-                allyController.alertLevel++;
+                    allyController.alertLevel++;
                 cf.snapPos = allyController.transform.position;
                 cf.alerted = true;
             }

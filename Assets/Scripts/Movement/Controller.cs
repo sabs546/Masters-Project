@@ -178,12 +178,16 @@ public class Controller : MonoBehaviour
 
             if (Input.GetKey(KeyCode.E) && newDecoy == null)
             { // Decoy throwing
-                newDecoy = Instantiate(decoy, transform.position, transform.rotation);
+                newDecoy = Instantiate(decoy, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.rotation);
                 newDecoy.AddComponent<Timer>().SetLimit(10.0f);
+                Vector2 speed = new Vector2();
+
                 if (Input.GetKey(KeyCode.W))
-                    newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 3.0f));
-                else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-                    newDecoy.GetComponent<DecoyController>().SetSpeed(new Vector2(currentSpeed * 2.0f, currentFall * 2.0f));
+                    speed.y = Mathf.Abs(currentFall) + 10.0f;
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                    speed.x = currentSpeed * 2.0f;
+
+                newDecoy.GetComponent<DecoyController>().SetSpeed(speed);
             }
         }
     }
