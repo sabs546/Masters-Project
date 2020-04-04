@@ -25715,14 +25715,14 @@ PrefabInstance:
       value: That went on for a few more hours, I'll get back to that later. So anyway
         I said to HIM that HE was the one that
       objectReference: {fileID: 0}
-    - target: {fileID: 7885334584958409023, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
-        type: 3}
-      propertyPath: startup
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885334584958409023, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: startup
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -28553,7 +28553,7 @@ PrefabInstance:
     - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 3372315618416725422, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}

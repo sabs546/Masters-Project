@@ -188,25 +188,29 @@ public class GuardController : MonoBehaviour
                     else if (allyController2.transform.position.y < targetPosition.y ||
                              allyController2.transform.position.y > allyController.transform.position.y)
                     { // If not then you have nobody else to contact, alert this guard
-                        allyController.hearing.heard = true; // He can hear
-                        allyController.hearing.contacted = true; // But don't reset the hearing value just yet
-                        contactingText.SetActive(true); // Start the text bubble
-                        allyController.contactedText.SetActive(true); // Start the contacts text bubble
                         if (allyController.alertLevel < 2)
+                        {
+                            allyController.hearing.heard = true; // He can hear
+                            allyController.hearing.contacted = true; // But don't reset the hearing value just yet
+                            contactingText.SetActive(true); // Start the text bubble
+                            allyController.contactedText.SetActive(true); // Start the contacts text bubble
                             allyController.alertLevel++; // Make him a little more alert because he needs to check for the sound
-                        cf.snapPos = allyController.transform.position;
-                        cf.alerted = true;
-                        return;
+                            cf.snapPos = allyController.transform.position;
+                            cf.alerted = true;
+                            return;
+                        }
                     }
                 }
-                allyController.hearing.heard = true;     // This is all more of the same really
-                allyController.hearing.contacted = true; // but it's just in case there is no loop
-                contactingText.SetActive(true);
-                allyController.contactedText.SetActive(true);
-                if (allyController.alertLevel == 1)
+                if (allyController.alertLevel < 2)
+                {
+                    allyController.hearing.heard = true;     // This is all more of the same really
+                    allyController.hearing.contacted = true; // but it's just in case there is no loop
+                    contactingText.SetActive(true);
+                    allyController.contactedText.SetActive(true);
                     allyController.alertLevel++;
-                cf.snapPos = allyController.transform.position;
-                cf.alerted = true;
+                    cf.snapPos = allyController.transform.position;
+                    cf.alerted = true;
+                }
             }
         }
     }
