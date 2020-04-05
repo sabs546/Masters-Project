@@ -13,9 +13,12 @@ public class DecoyController : MonoBehaviour
     private NoiseMaker noiseMaker;
     private GameObject[] walls;
     private Timer timer;
+    private Transform player;
+    private bool active;
     // Start is called before the first frame update
     void Start()
     {
+        active = true;
         gravity = 100.0f;
         resetGravity = gravity;
         used = false;
@@ -23,6 +26,7 @@ public class DecoyController : MonoBehaviour
         noiseMaker = GetComponent<NoiseMaker>();
         walls = GameObject.FindGameObjectsWithTag("Wall");
         timer = GetComponent<Timer>();
+        player = GameObject.Find("Runner").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class DecoyController : MonoBehaviour
             noiseMaker.MakeNoise((speed.x + speed.y) / 2);
             used = true;
         }
-        if (noiseMaker.soundRadius <= 0.0f && used)
+        if (CollisionCheck() && used)
         { // It's stopped making noise, destroy it
             Destroy(this.gameObject);
         }
@@ -70,5 +74,15 @@ public class DecoyController : MonoBehaviour
         {
             timer.timeUp = true;
         }
+    }
+
+    private bool CollisionCheck()
+    {
+        if (transform.position.y >= player.position.y - (player.lossyScale.y + transform.lossyScale.y) && transform.position.y <= player.position.y + (player.lossyScale.y + transform.lossyScale.y) &&
+            transform.position.x >= player.position.x - (player.lossyScale.x + transform.lossyScale.y) && transform.position.x <= player.position.x + (player.lossyScale.x + transform.lossyScale.y))
+        {
+            return true;
+        }
+        return false;
     }
 }
