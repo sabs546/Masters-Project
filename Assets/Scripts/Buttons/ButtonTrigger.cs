@@ -31,7 +31,7 @@ public class ButtonTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CollisionCheck(player.transform.position, transform.position, player.transform.lossyScale, transform.lossyScale);
+        CollisionCheck(player.transform.position, transform.position, player.transform.lossyScale / 2, transform.lossyScale / 2);
         if (timer != null && timer.timeUp)
             GetComponentInChildren<Canvas>().enabled = false;
     }
