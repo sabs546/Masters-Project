@@ -2726,8 +2726,8 @@ SortingGroup:
   m_GameObject: {fileID: 230533979}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &230533982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3134,8 +3134,8 @@ SortingGroup:
   m_GameObject: {fileID: 259338366}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &259338369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4404,8 +4404,8 @@ SortingGroup:
   m_GameObject: {fileID: 387309701}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &387309704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10500,8 +10500,8 @@ SortingGroup:
   m_GameObject: {fileID: 823451949}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &823451952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14480,8 +14480,8 @@ SortingGroup:
   m_GameObject: {fileID: 1194737898}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &1194737901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15303,8 +15303,8 @@ SortingGroup:
   m_GameObject: {fileID: 1243375065}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &1243375068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22022,8 +22022,8 @@ SortingGroup:
   m_GameObject: {fileID: 1833538848}
   m_Enabled: 1
   m_SortingLayerID: -71068883
-  m_SortingLayer: 3
-  m_SortingOrder: -7
+  m_SortingLayer: 4
+  m_SortingOrder: -6
 --- !u!212 &1833538851
 SpriteRenderer:
   m_ObjectHideFlags: 0

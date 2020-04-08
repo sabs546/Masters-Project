@@ -19,7 +19,9 @@ public class Controller : MonoBehaviour
     [HideInInspector]
     public  float        currentFall;    // Speed the object is falling at
     private float        resetGravity;
+    private float        walkSpeed;
     private bool         gripSet;        // What surface are you hitting
+    private bool         sprinting;
     
     // Hit checks -------
     [HideInInspector]
@@ -48,6 +50,7 @@ public class Controller : MonoBehaviour
         accel = 10.0f;
         resetGravity = gravity;
         gripSet = false;
+        sprinting = false;
         camera = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
     }
 
@@ -68,6 +71,11 @@ public class Controller : MonoBehaviour
             bool crashLand = landing; // Make a louder noise when you hit the ground
             landing = false; // Used for ground collision
             hitting = 0;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+                sprinting = true;
+            else
+                sprinting = false;
 
             if (hitting > -1)
             { // Move left
@@ -93,10 +101,20 @@ public class Controller : MonoBehaviour
                     currentSpeed = 0;
             }
 
-            if (currentSpeed > topSpeed)
-                currentSpeed = topSpeed;
-            if (currentSpeed < -topSpeed)
-                currentSpeed = -topSpeed;
+            if (sprinting)
+            {
+                if (currentSpeed > topSpeed)
+                    currentSpeed = topSpeed;
+                if (currentSpeed < -topSpeed)
+                    currentSpeed = -topSpeed;
+            }
+            else
+            {
+                if (currentSpeed > topSpeed / 2)
+                    currentSpeed = topSpeed / 2;
+                if (currentSpeed < -topSpeed / 2)
+                    currentSpeed = -topSpeed / 2;
+            }
             if (currentFall < terminalV)
                 currentFall = terminalV;
 
@@ -171,7 +189,12 @@ public class Controller : MonoBehaviour
             { // Some stuff needs to reset when you hit the floor
                 gravity = resetGravity;
                 if (Mathf.Abs(currentSpeed) > 2.0f)
-                    GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
+                {
+                    if (sprinting)
+                        GetComponentInChildren<StepTimer>().MakeNoise(1.75f / Mathf.Abs(currentSpeed));
+                    else
+                        GetComponentInChildren<StepTimer>().MakeNoise(2.0f / Mathf.Abs(currentSpeed));
+                }
                 else
                     GetComponentInChildren<StepTimer>().StopMoving();
             }
