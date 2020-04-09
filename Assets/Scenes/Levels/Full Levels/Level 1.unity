@@ -1651,11 +1651,10 @@ PrefabInstance:
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Text
-      value: 'The people in black, be wary of them. You don''t want them to see you
-        or it''s game over.
+      value: 'The people in black, be wary of them. This one''s with us but act like
+        he isn''t for training purposes.
 
-        This ones with us, but we specifically told him to look for you. He shouldn''t
-        see you from down there though.'
+        You can alert him with sound and see what happens though.'
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -7591,6 +7590,7 @@ Transform:
   m_Children:
   - {fileID: 2119965921}
   - {fileID: 1061706243}
+  - {fileID: 1718014240}
   - {fileID: 1819300710}
   - {fileID: 817283310}
   m_Father: {fileID: 0}
@@ -10364,7 +10364,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -20243,6 +20243,185 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1718014239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 584126023}
+    m_Modifications:
+    - target: {fileID: 4040685995089383505, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Name
+      value: Info Tall Tower 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 179.58862
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: 'If you happen to be struggling to make loud noises, press E to throw
+        out noisemakers
+
+        Be careful though, you can''t reuse it till you pick it up again, so don''t
+        get it lodged 20 feet up somewhere'
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625797080823630258, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: tooltipTextToShow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178275192324994117, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178275192324994117, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178275192324994117, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: 'The people in black, be wary of them. You don''t want them to see you
+        or it''s game over.
+
+        This ones with us, but we specifically told him to look for you. He shouldn''t
+        see you from down there though.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f7af8ceff62973f4282834a886af230f, type: 3}
+--- !u!4 &1718014240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1718014239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727411269
 GameObject:
   m_ObjectHideFlags: 0
@@ -23138,7 +23317,7 @@ PrefabInstance:
     - target: {fileID: 4040685995089383505, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Name
-      value: Info Tall Tower
+      value: Info Tall Tower 2
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -23178,7 +23357,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}

@@ -23,6 +23,7 @@ public class GuardController : MonoBehaviour
     private int          hitting;          // -1/0/1 | Is it hitting a wall
     public  int          direction;        // -1/+1  | Which way is he facing
     public  int          alertLevel;       // The higher this gets, the more thorough they are
+    private bool         contactActive;    // He should only contact once
     private Vector3      targetPosition;   // Position of player, if he hears it
 
     // Storing externals -------
@@ -46,6 +47,7 @@ public class GuardController : MonoBehaviour
         state = GetComponent<OpponentState>();
         hearing = GetComponent<Hearing>();
         timer = GetComponent<Timer>();
+        contactActive = true;
         if (direction == -1)
         {
             transform.Rotate(0.0f, 180.0f, 0.0f);
@@ -112,7 +114,8 @@ public class GuardController : MonoBehaviour
                     else
                     { // He's above you
                         state.SetState(3);
-                        ContactChain();
+                        if (contactActive)
+                            ContactChain();
                     }
                 }
             }
@@ -185,21 +188,6 @@ public class GuardController : MonoBehaviour
                         allyController = allies[i].GetComponent<GuardController>();
                         continue;
                     }
-                    else if (allyController2.transform.position.y < targetPosition.y ||
-                             allyController2.transform.position.y > allyController.transform.position.y)
-                    { // If not then you have nobody else to contact, alert this guard
-                        if (allyController.alertLevel < 2)
-                        {
-                            allyController.hearing.heard = true; // He can hear
-                            allyController.hearing.contacted = true; // But don't reset the hearing value just yet
-                            contactingText.SetActive(true); // Start the text bubble
-                            allyController.contactedText.SetActive(true); // Start the contacts text bubble
-                            allyController.alertLevel++; // Make him a little more alert because he needs to check for the sound
-                            cf.snapPos = allyController.transform.position;
-                            cf.alerted = true;
-                            return;
-                        }
-                    }
                 }
                 if (allyController.alertLevel < 2)
                 {
@@ -210,6 +198,7 @@ public class GuardController : MonoBehaviour
                     allyController.alertLevel++;
                     cf.snapPos = allyController.transform.position;
                     cf.alerted = true;
+                    contactActive = false;
                 }
             }
         }
