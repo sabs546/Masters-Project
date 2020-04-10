@@ -34,7 +34,6 @@ public class Controller : MonoBehaviour
     private int          currentFloor;   // Which floor is it standing on
     private GameObject[] walls;          // Store all the walls here
     private WallSetup[]  wallProperties;
-    private GameObject   boxCollider;
     private NoiseMaker   sfx;
     private Vector3      oldPos;
     private CameraFollow camera;
@@ -42,8 +41,6 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = this.gameObject;
-        boxCollider.AddComponent<BoxCollider2D>();
         walls = GameObject.FindGameObjectsWithTag("Wall");
         wallProperties = FindObjectsOfType<WallSetup>();
         sfx = GetComponent<NoiseMaker>();
@@ -80,14 +77,20 @@ public class Controller : MonoBehaviour
             if (hitting > -1)
             { // Move left
                 if (Input.GetKey(KeyCode.A))
+                {
                     currentSpeed -= accel * Time.deltaTime;
+                    transform.rotation = new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
+                }
                 else currentSpeed += accel * Time.deltaTime;
             }
 
             if (hitting < 1)
             { // Move right
                 if (Input.GetKey(KeyCode.D))
+                {
                     currentSpeed += accel * Time.deltaTime;
+                    transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+                }
                 else currentSpeed -= accel * Time.deltaTime;
             }
 
@@ -119,7 +122,7 @@ public class Controller : MonoBehaviour
                 currentFall = terminalV;
 
             oldPos = transform.position;
-            transform.Translate(currentSpeed * Time.deltaTime, currentFall * Time.deltaTime, 0.0f);
+            transform.Translate(currentSpeed * Time.deltaTime, currentFall * Time.deltaTime, 0.0f, Space.World);
 
             gripSet = false;
             for (int i = 0; i < walls.Length; i++) // Basic collision detection, behind this point, everything thinks it's free to move anywhere
@@ -156,9 +159,15 @@ public class Controller : MonoBehaviour
                 {
                     currentFall += launchPwr / 2;
                     if (hitting == -1)
+                    {
                         currentSpeed = topSpeed;
+                        transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+                    }
                     else
+                    {
                         currentSpeed = -topSpeed;
+                        transform.rotation = new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
+                    }
 
                     if (sfx.enabled)
                     { // Jump sound
