@@ -33,10 +33,10 @@ public class Controller : MonoBehaviour
 
     private int          currentFloor;   // Which floor is it standing on
     private GameObject[] walls;          // Store all the walls here
-    private WallSetup[]  wallProperties;
-    private NoiseMaker   sfx;
-    private Vector3      oldPos;
-    private CameraFollow camera;
+    private WallSetup[]  wallProperties; // Store what kinda wall they are here
+    private NoiseMaker   sfx;            // Sound effects for the character
+    private Vector3      oldPos;         // So you don't get stuck in walls
+    private CameraFollow camera;         // So you can't move during the intro cutscene
 
     // Start is called before the first frame update
     void Start()
