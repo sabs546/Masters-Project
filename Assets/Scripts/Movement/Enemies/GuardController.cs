@@ -97,7 +97,8 @@ public class GuardController : MonoBehaviour
                 timer.SetLimit(2.0f); // Start a timer for the next loop
                 hearing.FaceTheSound(); // Look at the sound
                 state.SetState(4); // Think about it
-                alertLevel++; // Be more alert because of it
+                if (alertLevel < 2)
+                    alertLevel++; // Be more alert because of it
                 hearing.contacted = false;
             }
             else if (state.currentState == 4)
@@ -199,6 +200,7 @@ public class GuardController : MonoBehaviour
                     cf.snapPos = allyController.transform.position;
                     cf.alerted = true;
                     contactActive = false;
+                    GetComponent<AudioSource>().Play();
                 }
             }
         }

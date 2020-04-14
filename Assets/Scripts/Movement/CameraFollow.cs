@@ -34,6 +34,10 @@ public class CameraFollow : MonoBehaviour
     {
         if (!begin)
         { // If the character can't move yet
+            if (Input.GetKey(KeyCode.Return))
+            {
+                begin = true;
+            }
             if (next != trGoal.Length)
             { // Pan the camera across the goals of the stage
                 if (transform.position.x < trGoal[next].position.x - 0.2f)
@@ -91,7 +95,7 @@ public class CameraFollow : MonoBehaviour
             Camera camera = GetComponent<Camera>();
             ParallaxBackground bg = GetComponentInChildren<ParallaxBackground>();
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightShift))
             {
                 if (camera.orthographicSize < 20.0f)
                 {

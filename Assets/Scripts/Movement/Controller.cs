@@ -69,7 +69,7 @@ public class Controller : MonoBehaviour
             landing = false; // Used for ground collision
             hitting = 0;
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightShift))
                 sprinting = true;
             else
                 sprinting = false;
@@ -214,8 +214,11 @@ public class Controller : MonoBehaviour
                 newDecoy.AddComponent<Timer>().SetLimit(10.0f);
                 Vector2 speed = new Vector2();
 
-                if (Input.GetKey(KeyCode.W))
-                    speed.y = Mathf.Abs(currentFall) + 10.0f;
+                if (Input.GetKey(KeyCode.S))
+                    speed.y = -Mathf.Abs(currentFall) - 10.0f;
+                else
+                    speed.y = currentFall + 10.0f;
+
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
                     speed.x = currentSpeed * 2.0f;
 

@@ -51,14 +51,24 @@ public class DecoyController : MonoBehaviour
                 CollisionCheck(transform.position, walls[i].transform.position, transform.lossyScale / 2, walls[i].transform.lossyScale / 2);
         }
 
-        if (timer.timeUp && !used)
-        { // For when you want a noisemaker limit
-            noiseMaker.MakeNoise((speed.x + speed.y) / 2);
-            used = true;
+        if (!used)
+        {
+            if (timer.timeUp)
+            { // For when you want a noisemaker limit
+                noiseMaker.MakeNoise((speed.x + speed.y) / 2);
+                used = true;
+            }
         }
-        if (CollisionCheck() && used)
-        { // It's stopped making noise, destroy it
-            Destroy(this.gameObject);
+        else
+        {
+            if (noiseMaker.soundRadius <= 0.0f)
+            { // Guards no longer care, it's stopped making noise
+                noiseMaker.enabled = false;
+            }
+            if (CollisionCheck())
+            { // You've picked it up, destroy it
+                Destroy(this.gameObject);
+            }
         }
     }
 

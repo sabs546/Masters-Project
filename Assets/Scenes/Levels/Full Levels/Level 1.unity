@@ -1616,7 +1616,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -1636,7 +1636,7 @@ PrefabInstance:
     - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -1651,20 +1651,17 @@ PrefabInstance:
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Text
-      value: 'The people in black, be wary of them. This one''s with us but act like
-        he isn''t for training purposes.
-
-        You can alert him with sound and see what happens though.'
+      value: Those black squares are bad guys, don't let them see you
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 72
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -1680,6 +1677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -4958,7 +4960,7 @@ PrefabInstance:
     - target: {fileID: 6976457880142276085, guid: 062d3ca02b6e68a419fc663410033777,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -189.5
+      value: -195
       objectReference: {fileID: 0}
     - target: {fileID: 6976457880142276085, guid: 062d3ca02b6e68a419fc663410033777,
         type: 3}
@@ -7589,10 +7591,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2119965921}
+  - {fileID: 2024363089}
   - {fileID: 1061706243}
   - {fileID: 1718014240}
   - {fileID: 1819300710}
-  - {fileID: 817283310}
+  - {fileID: 2090726834}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10314,151 +10317,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7881b7b181d05f046ade05a984e851b7, type: 3}
---- !u!1001 &817283309
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 584126023}
-    m_Modifications:
-    - target: {fileID: 4040685995089383505, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_Name
-      value: Info Neat Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -20.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 179.58862
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
-      objectReference: {fileID: 0}
-    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 225
-      objectReference: {fileID: 0}
-    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_Text
-      value: So you're down here, did you make the right choice?
-      objectReference: {fileID: 0}
-    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 175
-      objectReference: {fileID: 0}
-    - target: {fileID: 6625797080823630258, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: tooltipTextToShow
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_Text
-      value: Careful of that guy up there, and how much power you put into your jump.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 118
-      objectReference: {fileID: 0}
-    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 70
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7af8ceff62973f4282834a886af230f, type: 3}
---- !u!4 &817283310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
-    type: 3}
-  m_PrefabInstance: {fileID: 817283309}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &823451949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11889,7 +11747,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.174255
+      value: -45.67
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -11944,7 +11802,7 @@ PrefabInstance:
     - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -11959,15 +11817,12 @@ PrefabInstance:
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Text
-      value: 'This is your first mission briefing
-
-        I wanted to start by testing your skill, so all we want you to do, is get
-        to base without getting caught by our stationed guards.'
+      value: 'Mission 1: Get to that door we just showed you'
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -11977,7 +11832,12 @@ PrefabInstance:
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 70
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -16110,6 +15970,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220277058573236343, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220277058573236343, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220277058573236343, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4, type: 3}
@@ -20293,7 +20168,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -20313,7 +20188,7 @@ PrefabInstance:
     - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -20328,21 +20203,19 @@ PrefabInstance:
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Text
-      value: 'If you happen to be struggling to make loud noises, press E to throw
-        out noisemakers
+      value: 'Make sure you know how to control the trajectory of the decoy
 
-        Be careful though, you can''t reuse it till you pick it up again, so don''t
-        get it lodged 20 feet up somewhere'
+        A, D, S'
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 72
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -20358,6 +20231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -23357,7 +23235,7 @@ PrefabInstance:
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -23387,7 +23265,7 @@ PrefabInstance:
     - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -23397,32 +23275,37 @@ PrefabInstance:
     - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 225
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_Text
-      value: Careful of that guy up there, and how much power you put into your jump.
+      value: This guy on the balcony, He's of no use to you while he's up there
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 90
+      value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 175
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6625797080823630258, guid: f7af8ceff62973f4282834a886af230f,
         type: 3}
@@ -24657,6 +24540,144 @@ Transform:
   m_Father: {fileID: 1713836080}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2024363088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 584126023}
+    m_Modifications:
+    - target: {fileID: 4040685995089383505, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Name
+      value: Info Decoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.00941
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 179.58862
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: You have one single reuseable decoy with E
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625797080823630258, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: tooltipTextToShow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: 'This is your first mission briefing
+
+        I wanted to start by testing your skill, so all we want you to do, is get
+        to base without getting caught by our stationed guards.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7af8ceff62973f4282834a886af230f, type: 3}
+--- !u!4 &2024363089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2024363088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2025072138
 GameObject:
   m_ObjectHideFlags: 0
@@ -26005,6 +26026,157 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2090726833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 584126023}
+    m_Modifications:
+    - target: {fileID: 4040685995089383505, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Name
+      value: Info Crap Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 84.825745
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.009410858
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 179.58862
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685891118779768380, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 505786543378101028, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: That guy seems real far away, alerting guards from above makes them talk
+        to each other
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 611765441133814559, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158695257205018061, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625797080823630258, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: tooltipTextToShow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_Text
+      value: Careful of that guy up there, and how much power you put into your jump.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323774058484890466, guid: f7af8ceff62973f4282834a886af230f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7af8ceff62973f4282834a886af230f, type: 3}
+--- !u!4 &2090726834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2417229639737962306, guid: f7af8ceff62973f4282834a886af230f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090726833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2110966587
 GameObject:
   m_ObjectHideFlags: 0
@@ -26809,11 +26981,6 @@ PrefabInstance:
       value: Oh hey dude hows the fa... Oh you're "undercover" again? Yeah I see how
         it is
       objectReference: {fileID: 0}
-    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3925568423228048012, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -26838,6 +27005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9108993664485493132, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
