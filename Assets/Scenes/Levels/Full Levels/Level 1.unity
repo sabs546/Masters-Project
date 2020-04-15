@@ -24028,9 +24028,13 @@ PrefabInstance:
     - target: {fileID: 1901779371409947492, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_Text
-      value: 'Welcome to Hotel Hotels, something you want punk?
-
-        If not then scram, you''re scarin the customers.'
+      value: Welcome to Hotel Hotels, something you want punk? If not then scram,
+        you're scarin the customers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e4f6ff4e707c44fb6e58cafdfffb43, type: 3}
@@ -26981,6 +26985,11 @@ PrefabInstance:
       value: Oh hey dude hows the fa... Oh you're "undercover" again? Yeah I see how
         it is
       objectReference: {fileID: 0}
+    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3925568423228048012, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -27005,11 +27014,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9108993664485493132, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}

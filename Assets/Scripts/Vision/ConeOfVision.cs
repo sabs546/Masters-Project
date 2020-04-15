@@ -112,7 +112,10 @@ public class ConeOfVision : MonoBehaviour
                 {
                     playerInSight = true;
                     Debug.Log("We been spooted");
-                    GameObject.Find("Main Camera").GetComponentInChildren<DeathTransition>().enabled = true;
+                    DeathTransition DT = GameObject.Find("Main Camera").GetComponentInChildren<DeathTransition>();
+                    DT.enabled = true;
+                    if (DT.door != null)
+                        DT.door = null;
                     GameObject.Find("Main Camera").GetComponentInChildren<Letterboxing>().enabled = false;
                     // The game should just restart here
                 }
