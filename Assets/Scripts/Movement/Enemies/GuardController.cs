@@ -189,6 +189,8 @@ public class GuardController : MonoBehaviour
                         allyController = allies[i].GetComponent<GuardController>();
                         continue;
                     }
+                    else
+                        i++;
                 }
                 if (allyController.alertLevel < 2)
                 {

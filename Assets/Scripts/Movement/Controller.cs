@@ -160,12 +160,12 @@ public class Controller : MonoBehaviour
                     currentFall += launchPwr / 2;
                     if (hitting == -1)
                     {
-                        currentSpeed = topSpeed;
+                        currentSpeed = 20.0f;
                         transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
                     }
                     else
                     {
-                        currentSpeed = -topSpeed;
+                        currentSpeed = -20.0f;
                         transform.rotation = new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
                     }
 

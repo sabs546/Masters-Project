@@ -17,7 +17,8 @@ public class WallSetup : MonoBehaviour
     void Start()
     {
         boxCollider = this.gameObject;
-        boxCollider.AddComponent<BoxCollider2D>();
+        if (wallType != 4)
+            boxCollider.AddComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         controller = player.GetComponent<Controller>();
     }
@@ -44,6 +45,9 @@ public class WallSetup : MonoBehaviour
                 grip = 1.0f;
                 if (player.GetComponent<NoiseMaker>().enabled == false)
                     player.GetComponent<NoiseMaker>().enabled = true;
+                break;
+            case 4: // 0 but guards can see through it
+                grip = 1.0f;
                 break;
         }
         run *= grip;

@@ -1204,7 +1204,7 @@ MonoBehaviour:
   launchPwr: 30
   gravity: 110
   cling: 1
-  topSpeed: 20
+  topSpeed: 25
   terminalV: -110
   currentSpeed: 0
   currentFall: 0
