@@ -13162,7 +13162,7 @@ PrefabInstance:
     - target: {fileID: 8880991739528885950, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
         type: 3}
       propertyPath: destination
-      value: Level 1
+      value: Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4, type: 3}
@@ -28706,11 +28706,6 @@ PrefabInstance:
       propertyPath: currentState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: direction
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_text
@@ -28740,6 +28735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: direction
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}

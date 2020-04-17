@@ -46,6 +46,11 @@ public class Hearing : MonoBehaviour
                     sDist = xDist;
                     controller.SetTargetPos(target[i].transform.position); // Stores the players position when heard
                     heard = true;
+                    if (state.currentState == 2)
+                    {
+                        // Noise was heard, let the player know
+                        GetComponent<AudioSource>().Play();
+                    }
                 }
                 else
                 { // Otherwise he probably didn't hear anything...
