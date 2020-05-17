@@ -11,8 +11,9 @@ public class CameraFollow : MonoBehaviour
     public  Vector2 speed;
     public  Vector2 snapPos;
     public  bool    alerted;
-    public  bool    begin;   // Has the camera shown the goal yet
-    private int     next;    // Which goal is it going to
+    public  bool    begin;     // Has the camera shown the goal yet
+    public  float   scaleRate; // The rate the background zooms out at
+    private int     next;      // Which goal is it going to
     // Start is called before the first frame update
     void Start()
     {
@@ -100,7 +101,7 @@ public class CameraFollow : MonoBehaviour
                 if (camera.orthographicSize < 20.0f)
                 {
                     camera.orthographicSize += 10.0f * Time.deltaTime;
-                    bg.ResizeBG(0.1f);
+                    bg.ResizeBG(scaleRate);
                 }
                 else if (camera.orthographicSize > 20.0f)
                     camera.orthographicSize = 20.0f;
@@ -110,7 +111,7 @@ public class CameraFollow : MonoBehaviour
                 if (camera.orthographicSize > 10.0f)
                 {
                     camera.orthographicSize -= 10.0f * Time.deltaTime;
-                    bg.ResizeBG(-0.1f);
+                    bg.ResizeBG(-scaleRate);
                 }
                 else if (camera.orthographicSize < 10.0f)
                     camera.orthographicSize = 10.0f;

@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Movement\WallSetup.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\QuickInfo.cs" />
+    <Compile Include="Assets\Scripts\Quit.cs" />
     <Compile Include="Assets\Scripts\Sound\DecoyController.cs" />
     <Compile Include="Assets\Scripts\Sound\Hearing.cs" />
     <Compile Include="Assets\Scripts\Sound\NoiseMaker.cs" />

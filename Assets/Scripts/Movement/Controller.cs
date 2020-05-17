@@ -37,6 +37,7 @@ public class Controller : MonoBehaviour
     private NoiseMaker   sfx;            // Sound effects for the character
     private Vector3      oldPos;         // So you don't get stuck in walls
     private CameraFollow camera;         // So you can't move during the intro cutscene
+    public  GameObject   pauseMenu;      // The pause menu
 
     // Start is called before the first frame update
     void Start()
@@ -224,6 +225,15 @@ public class Controller : MonoBehaviour
 
                 newDecoy.GetComponent<DecoyController>().SetSpeed(speed);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (camera.begin && Input.GetKeyDown(KeyCode.P))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            camera.enabled = !camera.enabled;
         }
     }
 
