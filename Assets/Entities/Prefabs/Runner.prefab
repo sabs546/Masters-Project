@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bae5321cf5a3e46bd0cf9a71b35269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepSound:
+  - {fileID: 8300000, guid: 4010167104084cf4696974a535a1edb0, type: 3}
+  - {fileID: 8300000, guid: 2ba99a96637230945b6dad63bf24fbf3, type: 3}
+  - {fileID: 8300000, guid: 8487353d27dfd8e4c8aeb7ca158a63eb, type: 3}
+  - {fileID: 8300000, guid: e5c96f80c01ec764f99d1c9b28a87188, type: 3}
+  - {fileID: 8300000, guid: f12894cd7b7ca814a9a5fdbbb57b90c4, type: 3}
+  - {fileID: 8300000, guid: 0180a0f35ca40504d8648c7bf18e50ae, type: 3}
   timeLimit: 0
 --- !u!82 &5645117878604453674
 AudioSource:
