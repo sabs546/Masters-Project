@@ -561,7 +561,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1076,7 +1076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &196287041920674914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1535,7 +1535,6 @@ GameObject:
   - component: {fileID: 6464411210110805854}
   - component: {fileID: 646579917946878641}
   - component: {fileID: 1178849978930317133}
-  - component: {fileID: 2148024545888627595}
   m_Layer: 5
   m_Name: UnSetting Button
   m_TagString: Untagged
@@ -1675,19 +1674,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &2148024545888627595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195085679988640231}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd480092d5a8a4b876161e45fdc781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: Menu
 --- !u!1 &5220786493436665176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,7 +2542,6 @@ GameObject:
   - component: {fileID: 9038106931203254029}
   - component: {fileID: 2872813357182378160}
   - component: {fileID: 2258062955229411683}
-  - component: {fileID: 1379538864630474365}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -2696,19 +2681,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1379538864630474365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7251702359078864753}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd480092d5a8a4b876161e45fdc781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: Menu
 --- !u!1 &7412210569911170119
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,7 +3041,7 @@ GameObject:
   - component: {fileID: 8347328371576789034}
   - component: {fileID: 4082470561699240659}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3298,7 +3270,7 @@ GameObject:
   - component: {fileID: 8420606235818106180}
   - component: {fileID: 5805320032128003826}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

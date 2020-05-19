@@ -147,7 +147,7 @@ public class Controller : MonoBehaviour
                     else
                         sound.pitch = 2.0f;
 
-                    sound.volume = -tempFall / 200;
+                    sound.volume = (-tempFall / 200) * sfx.volumeSlider.value;
                     sound.Play();
                     crashLand = true;
                 }

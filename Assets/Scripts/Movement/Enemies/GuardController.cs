@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GuardController : MonoBehaviour
 {
@@ -37,6 +38,11 @@ public class GuardController : MonoBehaviour
     public  Transform           cov;       // Visual vision cone
     private CameraFollow        cf;        // For when guards are alerted
 
+    private bool active;                   // Is the slider active
+    public Slider volumeSlider;            // The slider it is binded to
+    private AudioSource source;            // The audio source
+    private float sourceVolume;            // The original volume
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +62,9 @@ public class GuardController : MonoBehaviour
             contactingText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
             contactedText.GetComponent<RectTransform>().localScale = new Vector3(direction, 1.0f, 1.0f);
         }
+        active = false;
+        source = GetComponent<AudioSource>();
+        sourceVolume = source.volume;
     }
 
     // Update is called once per frame
@@ -160,6 +169,12 @@ public class GuardController : MonoBehaviour
                     TurnAround();
             }
         }
+
+        if (active)
+        {
+            SetVolume();
+            active = false;
+        }
     }
 
     public void TurnAround()
@@ -238,6 +253,16 @@ public class GuardController : MonoBehaviour
                 hitting = 1;
             }
         }
+    }
+
+    public void SliderActive()
+    {
+        active = true;
+    }
+
+    private void SetVolume()
+    {
+        source.volume = sourceVolume * volumeSlider.value;
     }
 
     public int GetDirection() { return direction; }
