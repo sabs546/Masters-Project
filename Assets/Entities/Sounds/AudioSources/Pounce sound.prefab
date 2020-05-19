@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7518084957792706818}
   - component: {fileID: 8427177454933827005}
-  - component: {fileID: 6359266688512864372}
   m_Layer: 0
   m_Name: Pounce sound
   m_TagString: Untagged
@@ -128,16 +127,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6359266688512864372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4495114014205485831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb04192c8014ec4daa365c32c0d3ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeUp: 0

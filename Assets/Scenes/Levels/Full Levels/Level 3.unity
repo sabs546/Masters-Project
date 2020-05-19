@@ -10057,6 +10057,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab95521d286e0ad43b09be5663985564, type: 3}
+--- !u!1 &672919934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2936243871505475134, guid: ab95521d286e0ad43b09be5663985564,
+    type: 3}
+  m_PrefabInstance: {fileID: 672919933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &680009228
 GameObject:
   m_ObjectHideFlags: 0
@@ -13100,6 +13106,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8880991739528885950, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880991739528885950, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
+        type: 3}
+      propertyPath: destination
+      value: Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2881733404800228209, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13138,7 +13154,7 @@ PrefabInstance:
     - target: {fileID: 2881733404800228209, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2881733404800228209, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
         type: 3}
@@ -13154,16 +13170,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8880991739528885950, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8880991739528885950, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4,
-        type: 3}
-      propertyPath: destination
-      value: Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a218ddf6d8236468a5a6a2dbc4b5b4, type: 3}
@@ -13644,16 +13650,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5746072628373088396, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: currentState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: m_text
-      value: Great, now I have to actually WORK
-      objectReference: {fileID: 0}
     - target: {fileID: 1997314184242809003, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_Mesh
@@ -13678,6 +13674,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746072628373088396, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: currentState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Great, now I have to actually WORK
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1309dd98b9f6f4a8cb38f849702203, type: 3}
@@ -27816,7 +27822,7 @@ PrefabInstance:
     - target: {fileID: 6976457880142276085, guid: 062d3ca02b6e68a419fc663410033777,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976457880142276085, guid: 062d3ca02b6e68a419fc663410033777,
         type: 3}
@@ -27833,6 +27839,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6976457880142276087, guid: 062d3ca02b6e68a419fc663410033777,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 672919934}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062d3ca02b6e68a419fc663410033777, type: 3}
 --- !u!1 &1648477234
@@ -28382,16 +28393,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5746072628373088396, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: currentState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: m_text
-      value: Finally a reason to get away from this guy
-      objectReference: {fileID: 0}
     - target: {fileID: 1997314184242809003, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_Mesh
@@ -28416,6 +28417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746072628373088396, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: currentState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 916992775394740199, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: m_text
+      value: Finally a reason to get away from this guy
       objectReference: {fileID: 0}
     - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}

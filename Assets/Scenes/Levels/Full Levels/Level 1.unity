@@ -5022,6 +5022,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6976457880142276087, guid: 062d3ca02b6e68a419fc663410033777,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1787399517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062d3ca02b6e68a419fc663410033777, type: 3}
 --- !u!1001 &425830441
@@ -21368,6 +21373,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab95521d286e0ad43b09be5663985564, type: 3}
+--- !u!1 &1787399517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2936243871505475134, guid: ab95521d286e0ad43b09be5663985564,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787399516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1788627953
 GameObject:
   m_ObjectHideFlags: 0
@@ -21666,11 +21677,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
-      propertyPath: direction
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 6358726437779728447, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
       propertyPath: m_IsActive
@@ -21725,6 +21731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
+        type: 3}
+      propertyPath: direction
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5504347346882700857, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
@@ -26986,11 +26997,6 @@ PrefabInstance:
       value: Oh hey dude hows the fa... Oh you're "undercover" again? Yeah I see how
         it is
       objectReference: {fileID: 0}
-    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3925568423228048012, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -27015,6 +27021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759721343512664724, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9108993664485493132, guid: d2e4f6ff4e707c44fb6e58cafdfffb43,
         type: 3}

@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class NoiseMaker : MonoBehaviour
 {
     [HideInInspector]
     public  float soundRadius;
-    private float multiplier;
-    private bool stepped;
+    private bool  stepped;
 
     public  AudioSource[] sound;
+    private float[]       sourceVolume; // Store the original value of the noise
     private Controller    controller;
+    public  Slider        volumeSlider; // The slider that affects the noise
+    private bool          active;
     // Start is called before the first frame update
     void Start()
     {
         stepped = false;
+        active = false;
         controller = GetComponent<Controller>();
         sound = GetComponentsInChildren<AudioSource>();
+        sourceVolume = new float[sound.Length];
+        for (int i = 0; i < sound.Length; ++i)
+        {
+            sourceVolume[i] = sound[i].volume;
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +38,12 @@ public class NoiseMaker : MonoBehaviour
         stepped = false;
         if (soundRadius < 0.1f)
             soundRadius = 0.0f;
+
+        if (active)
+        {
+            SetVolume();
+            active = false;
+        }
     }
 
     public void AddSound()
@@ -52,5 +67,18 @@ public class NoiseMaker : MonoBehaviour
     {
         if (soundRadius < Mathf.Abs(radius))
             soundRadius = Mathf.Abs(radius);
+    }
+
+    public void SliderActive()
+    {
+        active = true;
+    }
+
+    private void SetVolume()
+    {
+        for (int i = 0; i < sound.Length; ++i)
+        {
+            sound[i].volume = sourceVolume[i] * volumeSlider.value;
+        }
     }
 }
