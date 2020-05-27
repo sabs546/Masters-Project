@@ -22026,11 +22026,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
         type: 3}
-      propertyPath: direction
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521583908133917814, guid: ae1309dd98b9f6f4a8cb38f849702203,
-        type: 3}
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 1982534996}

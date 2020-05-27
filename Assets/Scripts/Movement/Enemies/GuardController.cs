@@ -120,7 +120,10 @@ public class GuardController : MonoBehaviour
                 if (alertLevel == 2)
                 { // This is suspicious, run to the noise
                     if (hearing.GetYDist() >= 0) // He's below you
+                    {
                         state.SetState(5);
+                        GetComponent<AudioSource>().Play();
+                    }
                     else
                     { // He's above you
                         state.SetState(3);
@@ -217,7 +220,6 @@ public class GuardController : MonoBehaviour
                     cf.snapPos = allyController.transform.position;
                     cf.alerted = true;
                     contactActive = false;
-                    GetComponent<AudioSource>().Play();
                 }
             }
         }
