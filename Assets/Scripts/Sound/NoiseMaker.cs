@@ -27,6 +27,11 @@ public class NoiseMaker : MonoBehaviour
         {
             sourceVolume[i] = sound[i].volume;
         }
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = PlayerPrefs.GetFloat(volumeSlider.gameObject.name);
+            SetVolume();
+        }
     }
 
     // Update is called once per frame
@@ -79,6 +84,7 @@ public class NoiseMaker : MonoBehaviour
         for (int i = 0; i < sound.Length; ++i)
         {
             sound[i].volume = sourceVolume[i] * volumeSlider.value;
+            PlayerPrefs.SetFloat(volumeSlider.gameObject.name, volumeSlider.value);
         }
     }
 }

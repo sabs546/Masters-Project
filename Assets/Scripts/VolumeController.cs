@@ -14,7 +14,8 @@ public class VolumeController : MonoBehaviour
     {
         active = false;
         source = GetComponent<AudioSource>();
-        sourceVolume = source.volume;
+        volumeSlider.value = PlayerPrefs.GetFloat(volumeSlider.gameObject.name);
+        SetVolume();
     }
 
     // Update is called once per frame
@@ -35,5 +36,6 @@ public class VolumeController : MonoBehaviour
     private void SetVolume()
     {
         source.volume = sourceVolume * volumeSlider.value;
+        PlayerPrefs.SetFloat(volumeSlider.gameObject.name, volumeSlider.value);
     }
 }

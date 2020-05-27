@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class Controller : MonoBehaviour
     private Vector3      oldPos;         // So you don't get stuck in walls
     private CameraFollow camera;         // So you can't move during the intro cutscene
     public  GameObject   pauseMenu;      // The pause menu
+    public  GameObject   settings;       // The settings menu
 
     // Start is called before the first frame update
     void Start()
@@ -233,6 +235,7 @@ public class Controller : MonoBehaviour
         if (camera.begin && Input.GetKeyDown(KeyCode.P))
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
+            settings.GetComponent<Button>().onClick.Invoke();
             camera.enabled = !camera.enabled;
         }
     }

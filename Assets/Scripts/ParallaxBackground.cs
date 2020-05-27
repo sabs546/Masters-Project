@@ -20,6 +20,11 @@ public class ParallaxBackground : MonoBehaviour
         stable = type[0].GetComponentsInChildren<Transform>();
         parallax = type[1].GetComponentsInChildren<Transform>();
         camera = GetComponentInParent<CameraFollow>();
+        if (slider != null)
+        {
+            slider.value = PlayerPrefs.GetFloat(slider.gameObject.name);
+            SetParallax();
+        }
     }
 
     // Update is called once per frame
@@ -58,5 +63,6 @@ public class ParallaxBackground : MonoBehaviour
     private void SetParallax()
     {
         strength = slider.value;
+        PlayerPrefs.SetFloat(slider.gameObject.name, slider.value);
     }
 }
