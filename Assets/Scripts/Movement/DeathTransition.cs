@@ -23,7 +23,7 @@ public class DeathTransition : MonoBehaviour
         {
             transitionSpeed = 500.0f;
         }
-        if (boxes[0].rectTransform.anchoredPosition.y > -150.0f)
+        if (boxes[0].rectTransform.anchoredPosition.y > -230.0f)
         { // If box isn't at the limit
             boxes[0].transform.Translate(0.0f, -transitionSpeed * Time.deltaTime, 0.0f);
             boxes[1].transform.Translate(0.0f, transitionSpeed * Time.deltaTime, 0.0f);
